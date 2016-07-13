@@ -25,10 +25,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private AddFragment addFragment;
     private CookSpeakFragment cookSpeakFragment;
     private MyFragment myFragment;
-    //大段大段大段的
-//55555
-    //55555
-    //55555
+//lll
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +43,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         radioGroup = (RadioGroup) findViewById(R.id.rg_buttom);
     }
     //Fragment之间的切换
-    //ceshi.............
-    //ningyachao
-    //lllllllllllllllll
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         transaction = manager.beginTransaction();
