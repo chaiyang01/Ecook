@@ -25,10 +25,15 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private AddFragment addFragment;
     private CookSpeakFragment cookSpeakFragment;
     private MyFragment myFragment;
+    //大段大段大段的
+//55555
+    //55555
+    //55555
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //......
         //初始化视图
         initView();
         manager = getSupportFragmentManager();
