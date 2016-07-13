@@ -9,7 +9,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center_horizontal"
-            android:text="厨说"
+            android:text="@string/cookspeak_word1"
             android:textSize="17sp"/>
         <ImageView
             android:layout_width="30dp"
@@ -39,7 +39,7 @@
                     android:gravity="center"
                     android:textColor="@color/orange"
                     android:drawableBottom="@drawable/title"
-                    android:text="广场"/>
+                    android:text="@string/cookspeak_word2"/>
                 <RadioButton
                     android:id="@+id/rb_attention"
                     android:layout_width="0dp"
@@ -48,7 +48,7 @@
                     android:button="@null"
                     android:textSize="15sp"
                     android:gravity="center"
-                    android:text="关注"/>
+                    android:text="@string/cookspeak_word3"/>
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
