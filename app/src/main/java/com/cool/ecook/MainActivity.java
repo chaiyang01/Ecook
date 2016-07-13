@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private AddFragment addFragment;
     private CookSpeakFragment cookSpeakFragment;
     private MyFragment myFragment;
-//lll
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
