@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         RadioButton childAt = (RadioButton) radioGroup.getChildAt(0);
         childAt.setChecked(true);
     }
-
     private void initView() {
         radioGroup = (RadioGroup) findViewById(R.id.rg_buttom);
     }
