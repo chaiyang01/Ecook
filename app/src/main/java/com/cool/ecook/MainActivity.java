@@ -14,8 +14,9 @@ import com.cool.ecook.fragment.InterCookFragment;
 import com.cool.ecook.fragment.MyFragment;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
-
+    //UI
     private RadioGroup radioGroup;
+    //Fragment
     private FragmentManager manager;
     private FragmentTransaction transaction;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private AddFragment addFragment;
     private CookSpeakFragment cookSpeakFragment;
     private MyFragment myFragment;
-    //大段大段大段的
+//22
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
