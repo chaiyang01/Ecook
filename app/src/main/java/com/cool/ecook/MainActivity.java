@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //鍒濆鍖栧竷灞€
+        //初始化视图
         initView();
         manager = getSupportFragmentManager();
         radioGroup.setOnCheckedChangeListener(this);
-        //閫変腑缃戜笂鍘ㄦ埧
+        //选中网上厨房
         RadioButton childAt = (RadioButton) radioGroup.getChildAt(0);
         childAt.setChecked(true);
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private void initView() {
         radioGroup = (RadioGroup) findViewById(R.id.rg_buttom);
     }
-    //Fragment涔嬮棿鐨勫垏鎹�
+    //Fragment之间的切换
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         transaction = manager.beginTransaction();
