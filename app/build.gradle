@@ -28,4 +28,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile project(':httplibrary')
     compile project(':library')
+    compile 'com.android.support:design:23.3.0'
 }
