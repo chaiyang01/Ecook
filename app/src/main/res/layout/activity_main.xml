@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/ll_main"
+        android:orientation="vertical"
+        android:layout_above="@+id/rg_buttom"
+        android:layout_height="match_parent"></LinearLayout>
+    <RadioGroup
+        android:id="@+id/rg_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_internetcook"
+            android:drawableTop="@drawable/selecter_radio_internetcook"
+            style="@style/CustomRadioButton"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_cookbook"
+            android:drawableTop="@drawable/selecter_radio_cookbook"
+            style="@style/CustomRadioButton"
+            />
+        <RadioButton
+            android:id="@+id/rb_add"
+            android:drawableTop="@drawable/first_add"
+            style="@style/CustomRadioButton"
+            />
+        <RadioButton
+            android:id="@+id/rb_cookspeak"
+            android:drawableTop="@drawable/selecter_radio_cookspeak"
+            style="@style/CustomRadioButton"
+            />
+        <RadioButton
+            android:id="@+id/rb_my"
+            android:drawableTop="@drawable/selecter_radio_my"
+            style="@style/CustomRadioButton"
+            />
+    </RadioGroup>
+
+
+
+</RelativeLayout>
