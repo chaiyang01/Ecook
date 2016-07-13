@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     //Fragment之间的切换
     //ceshi.............
     //ningyachao
+    //lllllllllllllllll
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         transaction = manager.beginTransaction();
