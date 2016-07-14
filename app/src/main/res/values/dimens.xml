@@ -22,6 +22,6 @@
     <dimen name="cookbook_thirty">30dp</dimen>
     <!--cy end -->
 
-
+    <dimen name="fragment_my_word">20dp</dimen>
 
 </resources>

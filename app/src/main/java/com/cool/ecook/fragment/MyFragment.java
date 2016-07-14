@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.LinearLayout;
 
 import com.cool.ecook.R;
 
@@ -14,6 +17,8 @@ import com.cool.ecook.R;
  */
 public class MyFragment extends Fragment {
 
+
+    private AlphaAnimation anim;
 
     public MyFragment() {
         // Required empty public constructor
@@ -29,7 +34,19 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my, container, false);
+        //jj
+        View view = inflater.inflate(R.layout.fragment_my, container, false);
+
+        LinearLayout myLayoutWord = (LinearLayout) view.findViewById(R.id.ll_my_word);
+        myLayoutWord.startAnimation(getAnimation());
+        anim.startNow();
+        return view;
+    }
+
+    private Animation getAnimation() {
+        anim = new AlphaAnimation(0,1);
+        anim.setDuration(10000);
+        return anim;
     }
 
 }
