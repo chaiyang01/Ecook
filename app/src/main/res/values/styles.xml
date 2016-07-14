@@ -15,7 +15,6 @@
         <item name="android:button">@null</item>
     </style>
 
-
     <!--begain cy 2016.7.14-->
     <style name="all_width_height_match">
         <item name="android:layout_width">match_parent</item>
@@ -38,9 +37,10 @@
         <item name="android:scaleType">centerCrop</item>
     </style>
 
-
-
-
-
+    <style name="MyFragmentWordStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
 </resources>
