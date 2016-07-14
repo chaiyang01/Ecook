@@ -7,95 +7,110 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/blur_bg"
-        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/ll_my_word"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/my_fragment_title"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_setting" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blur_bg"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/my_fragment_word1"
-                android:textColor="@color/white"
-                android:layout_marginTop="20dp"/>
-
             <LinearLayout
+                android:id="@+id/ll_my_word"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    style="@style/MyFragmentWordStyle"
+                    android:layout_marginTop="@dimen/fragment_my_word"
+                    android:text="@string/my_fragment_word1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/my_fragment_word2"
-                    android:textColor="@color/white" />
+                    android:layout_marginTop="@dimen/fragment_my_word"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/MyFragmentWordStyle"
+                        android:text="@string/my_fragment_word2" />
+
+                    <TextView
+                        style="@style/MyFragmentWordStyle"
+                        android:text="@string/my_fragment_word3"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        style="@style/MyFragmentWordStyle"
+                        android:text="@string/my_fragment_word4" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/fragment_my_word"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/MyFragmentWordStyle"
+                        android:text="@string/my_fragment_word5" />
+
+                    <TextView
+                        style="@style/MyFragmentWordStyle"
+                        android:text="@string/my_fragment_word6" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_fragment_word3"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_fragment_word4"
-                    android:textColor="@color/white" />
+                    style="@style/MyFragmentWordStyle"
+                    android:layout_marginTop="@dimen/fragment_my_word"
+                    android:text="@string/my_fragment_word7" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btn_my_login"
+                style="@style/MyFragmentWordStyle"
+                android:layout_marginTop="@dimen/fragment_my_word"
+                android:background="@color/orange"
+                android:text="@string/my_fragment_btn" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_fragment_word5"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_fragment_word6"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-            <TextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/my_fragment_word7"
-                android:textColor="@color/white"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="@dimen/fragment_my_word"
+                android:src="@drawable/img_login" />
 
         </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/orange"
-            android:text="@string/my_fragment_btn"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_login"
-            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 
