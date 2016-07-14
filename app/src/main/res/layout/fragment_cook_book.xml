@@ -4,24 +4,22 @@
     android:layout_height="match_parent"
     tools:context="com.cool.ecook.fragment.CookBookFragment">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/all_width_height_match"
         android:orientation="vertical"
         >
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cookbook_height"
+        android:layout_height="@dimen/cookbook_forty"
         android:text="@string/cookbook_top"
         android:gravity="center"
-        android:textSize="@dimen/cookbook_textsize"
-        android:layout_marginTop="5dp"
+        android:textSize="@dimen/cookbook_seventeen"
+        android:layout_marginTop="@dimen/cookbook_five"
         />
 
     <!-- TODO: Update blank fragment layout -->
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/pull_cookbook_listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/all_width_height_match"
         ></com.handmark.pulltorefresh.library.PullToRefreshListView>
     </LinearLayout>
 
