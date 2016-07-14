@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- LH -->
+    <string name="my_fragment_word1">拥有一个网上厨房账号</string>
+    <string name="my_fragment_word2">结交各路厨神</string>
+    <string name="my_fragment_word3">\t你将可以\t</string>
+    <string name="my_fragment_word4">参加各种有奖活动</string>
+    <string name="my_fragment_word5">在线收藏菜谱和专辑\t\t\t</string>
+    <string name="my_fragment_word6">积分兑换奖品</string>
+    <string name="my_fragment_word7">更多意想不到的美好</string>
+    <string name="my_fragment_btn">注册/登录</string>
+
 </resources>
