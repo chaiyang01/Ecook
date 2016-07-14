@@ -3,11 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cool.ecook.fragment.CookBookFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        style="@style/all_width_height_match"
+        android:orientation="vertical"
+        >
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="菜谱" />
+        android:layout_height="@dimen/cookbook_forty"
+        android:text="@string/cookbook_top"
+        android:gravity="center"
+        android:textSize="@dimen/cookbook_seventeen"
+        android:layout_marginTop="@dimen/cookbook_five"
+        />
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pull_cookbook_listview"
+        style="@style/all_width_height_match"
+        ></com.handmark.pulltorefresh.library.PullToRefreshListView>
+    </LinearLayout>
 
 </FrameLayout>

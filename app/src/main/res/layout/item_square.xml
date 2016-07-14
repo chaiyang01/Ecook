@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ci_pic_show"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:civ_border_color="#ffffff"
+        app:civ_border_width="4dp" />
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cookspeak_word4"
+        android:textColor="#606060"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ci_pic_show"
+        android:layout_toEndOf="@+id/ci_pic_show" />
+    <TextView
+        android:paddingLeft="10dp"
+        android:id="@+id/tv_displaytime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cookspeak_word4"
+        android:layout_below="@+id/tv_username"
+        android:layout_toRightOf="@+id/ci_pic_show"
+        android:layout_toEndOf="@+id/ci_pic_show" />
+    <TextView
+        android:id="@+id/tv_splitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cookspeak_word4"
+        android:layout_below="@+id/tv_username"
+        android:layout_toRightOf="@+id/tv_displaytime"
+        android:layout_toEndOf="@+id/tv_displaytime" />
+    <TextView
+        android:paddingLeft="10dp"
+        android:paddingTop="14dp"
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cookspeak_word5"
+        android:layout_below="@+id/ci_pic_show"
+        android:layout_toRightOf="@+id/ci_pic_show"
+        android:layout_toEndOf="@+id/ci_pic_show" />
+    <com.cool.ecook.view.MyGridView
+        android:id="@+id/pic_gv"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:numColumns="2"
+        android:layout_below="@+id/tv_text"></com.cool.ecook.view.MyGridView>
+    <ImageView
+        android:id="@+id/message_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mine_collection_cotent"
+        android:layout_below="@+id/pic_gv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="89dp"
+        android:layout_marginEnd="89dp" />
+    <TextView
+        android:id="@+id/messagenum_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_above="@+id/comment_lv"
+        android:layout_alignLeft="@+id/message_iv"
+        android:layout_alignStart="@+id/message_iv"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp" />
+    <ImageView
+        android:id="@+id/good_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_top_enjoy"
+        android:layout_alignBottom="@+id/messagenum_tv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp" />
+    <TextView
+        android:id="@+id/goodnum_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_below="@+id/pic_gv"
+        android:layout_alignRight="@+id/tv_text"
+        android:layout_alignEnd="@+id/tv_text" />
+    <com.cool.ecook.view.MyListView
+        android:id="@+id/comment_lv"
+        android:layout_below="@+id/message_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"></com.cool.ecook.view.MyListView>
+</RelativeLayout>

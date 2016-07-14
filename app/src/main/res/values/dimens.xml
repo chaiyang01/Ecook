@@ -2,4 +2,26 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--cy begain 07.13-->
+    <dimen name="cookbook_fifty">50dp</dimen>
+    <dimen name="cookbook_eight">8dp</dimen>
+    <dimen name="cookbook_forty">40dp</dimen>
+    <dimen name="cookbook_seventeen">17sp</dimen>
+    <dimen name="cookbook_seventeen_sp">17sp</dimen>
+    <dimen name="cookbook_one_two_zero">120dp</dimen>
+    <dimen name="cookbook_zero">0dp</dimen>
+    <dimen name="cookbook_five">5dp</dimen>
+    <dimen name="cookbook_twenty">20dp</dimen>
+    <dimen name="cookbook_twenty_sp">20dp</dimen>
+    <dimen name="cookbook_ten">10dp</dimen>
+    <dimen name="cookbook_four">4dp</dimen>
+    <dimen name="cookbook_one_one_zero">110dp</dimen>
+    <dimen name="cookbook_fifteen">15dp</dimen>
+    <dimen name="cookbook_fifteen_sp">15dp</dimen>
+    <dimen name="cookbook_thirty">30dp</dimen>
+    <!--cy end -->
+
+
+
 </resources>

@@ -14,4 +14,23 @@
     <string name="my_fragment_word7">更多意想不到的美好</string>
     <string name="my_fragment_btn">注册/登录</string>
 
+
+    <!--cy begain 07.13-->
+    <string name="cookbook_top">菜谱</string>
+    <string name="cookbook_fresh">新鲜菜</string>
+    <string name="cookbook_hot">周最热</string>
+    <!--cy end -->
+
+
+    <!-- TODO: CookSpeak -->
+    <string name="cookspeak_word1">厨说</string>
+    <string name="cookspeak_word2">广场</string>
+    <string name="cookspeak_word3">关注</string>
+    <string name="cookspeak_word4">猫猫</string>
+    <string name="cookspeak_word5">厨说</string>
+
+    <!-- TODO: CookSpeak -->
+
+
+
 </resources>
