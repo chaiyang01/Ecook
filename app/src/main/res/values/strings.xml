@@ -3,4 +3,19 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--cy begain 07.13-->
+    <string name="cookbook_top">菜谱</string>
+    <!--cy end -->
+
+
+    <!-- TODO: CookSpeak -->
+    <string name="cookspeak_word1">厨说</string>
+    <string name="cookspeak_word2">广场</string>
+    <string name="cookspeak_word3">关注</string>
+    <string name="cookspeak_word4">厨说</string>
+    <string name="cookspeak_word5">厨说</string>
+
+    <!-- TODO: CookSpeak -->
+
 </resources>

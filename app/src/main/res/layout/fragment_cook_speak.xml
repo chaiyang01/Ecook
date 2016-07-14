@@ -3,27 +3,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cool.ecook.fragment.CookSpeakFragment">
-    <TextView
-        android:id="@+id/tv"
-        android:paddingTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_horizontal"
-        android:text="厨说"
-        android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_horizontal"
+            android:text="@string/cookspeak_word1"
+            android:textSize="17sp"/>
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/talk_notify_camera"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
         <LinearLayout
+            android:id="@+id/ll_radio"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_below="@+id/tv">
-            
+            <RadioGroup
+                android:id="@+id/rg_cookspeak"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rb_square"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:textColor="@color/orange"
+                    android:drawableBottom="@drawable/title"
+                    android:text="@string/cookspeak_word2"/>
+                <RadioButton
+                    android:id="@+id/rb_attention"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:text="@string/cookspeak_word3"/>
+            </RadioGroup>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/ll_square"
+            android:orientation="vertical"
+            android:layout_below="@+id/ll_radio"
+            android:layout_height="match_parent"></LinearLayout>
 
 </RelativeLayout>

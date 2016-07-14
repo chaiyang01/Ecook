@@ -2,9 +2,11 @@ package com.cool.ecook.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
 import com.cool.ecook.R;
 
+/**
+ * 关注  YX
+ */
 public class AttentionActivity extends AppCompatActivity {
 
     @Override
