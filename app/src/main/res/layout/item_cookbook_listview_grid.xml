@@ -25,18 +25,15 @@
             android:id="@+id/tv_cookbook_classfig"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/cookbook_twenty"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/cookbook_five"
+            android:layout_marginTop="@dimen/cookbook_ten"
             android:layout_toRightOf="@id/tv_bg_yellow"
             android:textSize="@dimen/cookbook_seventeen" />
-
     </RelativeLayout>
 
     <com.cool.ecook.view.MyGridView
         android:id="@+id/gv_cookbook_list_item"
         style="@style/all_width_height_match"
-        android:numColumns="4"
-
-        ></com.cool.ecook.view.MyGridView>
+        android:numColumns="4" />
 
 </LinearLayout>

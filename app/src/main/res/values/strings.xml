@@ -6,6 +6,8 @@
 
     <!--cy begain 07.13-->
     <string name="cookbook_top">菜谱</string>
+    <string name="cookbook_fresh">新鲜菜</string>
+    <string name="cookbook_hot">周最热</string>
     <!--cy end -->
 
 
@@ -17,5 +19,7 @@
     <string name="cookspeak_word5">厨说</string>
 
     <!-- TODO: CookSpeak -->
+
+
 
 </resources>

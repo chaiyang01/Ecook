@@ -28,7 +28,7 @@
                style="@style/all_width_height_warp"
                 android:layout_below="@id/iv_cook_fresh"
                 android:layout_centerHorizontal="true"
-                android:text="新鲜菜"
+                android:text="@string/cookbook_fresh"
                 android:textColor="@color/white"
                 android:textSize="@dimen/cookbook_seventeen" />
         </RelativeLayout>
@@ -51,7 +51,7 @@
                style="@style/all_width_height_warp"
                 android:layout_below="@id/iv_cook_hot"
                 android:layout_centerHorizontal="true"
-                android:text="周最热"
+                android:text="@string/cookbook_hot"
                 android:textColor="@color/white"
                 android:textSize="@dimen/cookbook_seventeen" />
         </RelativeLayout>
