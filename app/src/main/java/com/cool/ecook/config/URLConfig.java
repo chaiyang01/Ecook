@@ -12,11 +12,15 @@ public class URLConfig {
     public static final String URL_SQUARE="http://api.ecook.cn/public/getHotTalkList.shtml";
     //第三页面广告
     public static final String URL_SQUARE2="http://api.ecook.cn/public/getTalkSquareAds.shtml";
+    //第三页面转跳的内容
+    public static final String URL_SQUARE3="http://api.ecook.cn/public/getTopicReferTalksWithoutLogin.shtml";
+    //第三页面个人信息
+    public static final String URL_SQUARE4 = "http://api.ecook.cn/public/getUserPageData.shtml";
     //图片契合地址,中间数字为替换的ID
-    public static final String PIC_ADDR = "http://pic.ecook.cn/web/14516602.jpg!s1";
+    public static final String PIC_ADDR = "http://pic.ecook.cn/web/";
+    public static final String PIC_ADDR2 = ".jpg!s1";
     //菜谱界面的listview数据
     public static final String  COOKBOOK_LISTVIEW = "http://api.ecook.cn/public/getRecipeHomeData.shtml";
-
 
 
 }
