@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cool.ecook">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AttentionActivity"></activity>
+        <activity android:name=".activity.AttentionActivity" />
+        <activity android:name=".activity.BreakfastActivity" />
+        <activity android:name=".activity.LunchActivity" />
+        <activity android:name=".activity.FreeActivity" />
+        <activity android:name=".activity.MilkActivity" />
+        <activity android:name=".activity.DinnerActivity" />
+        <activity android:name=".activity.InformationActivity"></activity>
     </application>
 
 </manifest>
