@@ -28,13 +28,12 @@ public class SquareAdapter extends BaseAdapter{
     private List<SquareBean.ListBean> data;
     private LayoutInflater inflater;
     private Context context;
-    private List<String[]> list = new ArrayList<>();
+    private List<String[]> list;
 
-    public SquareAdapter(List<SquareBean.ListBean> data, Context context,List<String[]> list) {
+    public SquareAdapter(List<SquareBean.ListBean> data, Context context) {
         this.data = data;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
-        this.list = list;
     }
 
     @Override
@@ -57,7 +56,7 @@ public class SquareAdapter extends BaseAdapter{
         ViewHolder holder = null;
         if (view==null){
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.item_square,null);
+            view = inflater.inflate(R.layout.item_square,viewGroup,false);
             holder.ivIconurl = (CircleImageView) view.findViewById(R.id.ci_pic_show);
             holder.tvUserName = (TextView) view.findViewById(R.id.tv_username);
             holder.tvDisplaytime = (TextView) view.findViewById(R.id.tv_displaytime);
@@ -79,8 +78,15 @@ public class SquareAdapter extends BaseAdapter{
         holder.tvTex.setText(squareBean.getText());
         holder.tvMessagenum.setText(squareBean.getTalkLikeWebPo().getIsLike()+"");
         holder.tvGoodnum.setText(squareBean.getTalkLikeWebPo().getLikenum()+"");
+        //将GridView图片ID拆分，装进List里面
+        list = new ArrayList<>();
+        for (int j =0;j<data.size();j++){
+            String str = data.get(i).getImageids();
+            String[] obj = str.split(",");
+            list.add(obj);
+        }
         String[] strings = list.get(i);
-        if (strings.length%3==0||strings.length%2!=0){
+        if (strings.length==3||strings.length>4){
             holder.gv.setNumColumns(3);
         }else {
             holder.gv.setNumColumns(2);
@@ -132,7 +138,7 @@ public class SquareAdapter extends BaseAdapter{
             ViewHolder viewHolder = null;
             if (view==null){
                 viewHolder = new ViewHolder();
-                view  = inflater.inflate(R.layout.item_square_gridview,viewGroup,false);
+                view  = inflater.inflate(R.layout.item_square_gridview,null);
                 viewHolder.imageView = (ImageView) view.findViewById(R.id.grid_iv);
                 view.setTag(viewHolder);
             }else {
