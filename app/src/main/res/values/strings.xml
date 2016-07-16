@@ -36,10 +36,11 @@
     <string name="cookspeak_word2">广场</string>
     <string name="cookspeak_word3">关注</string>
     <string name="cookspeak_word4">猫猫</string>
-    <string name="cookspeak_word5">厨说</string>
-
+    <string name="cookspeak_word5">美好的一天从早餐开始！</string>
+    <string name="cookspeak_word6">#早餐#</string>
+    <string name="cookspeak_word7">#午餐#</string>
+    <string name="cookspeak_word8">#晚餐#</string>
     <!-- TODO: CookSpeak -->
-
 
 
 </resources>
