@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/grid_iv"
-        android:layout_width="100dp"
+        android:layout_width="130dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"/>
 </LinearLayout>

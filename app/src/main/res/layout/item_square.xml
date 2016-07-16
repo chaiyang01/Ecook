@@ -2,12 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ci_pic_show"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:civ_border_color="#ffffff"
+        android:clickable="true"
         app:civ_border_width="4dp" />
     <TextView
         android:padding="10dp"
@@ -49,8 +51,11 @@
     <com.cool.ecook.view.MyGridView
         android:id="@+id/pic_gv"
         android:padding="10dp"
+        android:focusable="false"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:numColumns="2"
         android:layout_below="@+id/tv_text"></com.cool.ecook.view.MyGridView>
     <ImageView
@@ -92,6 +97,7 @@
         android:layout_alignRight="@+id/tv_text"
         android:layout_alignEnd="@+id/tv_text" />
     <com.cool.ecook.view.MyListView
+        android:focusable="false"
         android:id="@+id/comment_lv"
         android:layout_below="@+id/message_iv"
         android:layout_width="match_parent"
