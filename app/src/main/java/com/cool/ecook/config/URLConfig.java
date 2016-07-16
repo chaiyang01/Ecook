@@ -16,7 +16,10 @@ public class URLConfig {
     public static final String PIC_ADDR = "http://pic.ecook.cn/web/14516602.jpg!s1";
     //菜谱界面的listview数据
     public static final String  COOKBOOK_LISTVIEW = "http://api.ecook.cn/public/getRecipeHomeData.shtml";
-
+    //最新专辑界面数据（get）
+    public static final String COOKBOOK_SPECIAL = "http://api.ecook.cn/public/getCollectionSortListByType.shtml";
+    //最热专辑界面数据（post）
+    public static final String COOKBOOK_HOT = "http://api.ecook.cn/public/getCollectionSortListByType.shtml";
 
 
 }

@@ -10,7 +10,10 @@
     <dimen name="cookbook_seventeen">17sp</dimen>
     <dimen name="cookbook_seventeen_sp">17sp</dimen>
     <dimen name="cookbook_one_two_zero">120dp</dimen>
+    <dimen name="cookbook_one_three_zero">130dp</dimen>
+    <dimen name="cookbook_one_zero_zero">100dp</dimen>
     <dimen name="cookbook_zero">0dp</dimen>
+    <dimen name="cookbook_one">1dp</dimen>
     <dimen name="cookbook_five">5dp</dimen>
     <dimen name="cookbook_twenty">20dp</dimen>
     <dimen name="cookbook_twenty_sp">20dp</dimen>
@@ -20,6 +23,8 @@
     <dimen name="cookbook_fifteen">15dp</dimen>
     <dimen name="cookbook_fifteen_sp">15dp</dimen>
     <dimen name="cookbook_thirty">30dp</dimen>
+    <dimen name="cookbook_three">3dp</dimen>
+    <dimen name="cookbook_two_two_zero">220dp</dimen>
     <!--cy end -->
 
     <dimen name="fragment_my_word">20dp</dimen>

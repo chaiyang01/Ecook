@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   style="@style/all_width_height_match"
+    tools:context="com.cool.ecook.activity.FreshBooKDetailsActivity">
+
+</RelativeLayout>
