@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cookbook_fifteen">
+        android:layout_height="@dimen/cookbook_fifty">
 
         <ImageView
             android:id="@+id/iv_cookbook_fresh_bar_back"

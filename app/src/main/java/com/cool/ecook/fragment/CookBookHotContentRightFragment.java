@@ -46,6 +46,7 @@ public class CookBookHotContentRightFragment extends Fragment {
     }
 
     private void initData() {
+        mListBean.clear();
         OkHttpUtils.post().url(URLConfig.COOKBOOK_HOT)
                 .addParams("machine","f7b9d5f586a588130b89aa03fe7264f3")
                 .addParams("version","12.4.6")

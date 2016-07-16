@@ -48,6 +48,7 @@ public class CookBookFreshContentRightFragment extends Fragment {
     }
 
     private void initData() {
+        mListBean.clear();
         OkHttpUtils.get().url(URLConfig.COOKBOOK_SPECIAL).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {

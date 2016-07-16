@@ -19,6 +19,7 @@ import android.widget.RadioGroup;
 import com.androidxx.yangjw.httplibrary.OkHttpTool;
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.CookBookListPassActivity;
 import com.cool.ecook.activity.FreshActivity;
 import com.cool.ecook.activity.FreshBooKSpecialActivity;
 import com.cool.ecook.activity.HotActivity;
@@ -160,7 +161,8 @@ public class CookBookFragment extends Fragment{
         listAdapter.setmOnItemClickListener(new BooKListAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(), FreshBooKSpecialActivity.class);
+                Intent intent = new Intent(getActivity(), CookBookListPassActivity.class);
+
                 startActivity(intent);
             }
         });
