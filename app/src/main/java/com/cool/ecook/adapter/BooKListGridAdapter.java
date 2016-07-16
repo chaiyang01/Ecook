@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
 import com.cool.ecook.bean.CookBookInfo;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.List;
 
@@ -54,14 +55,13 @@ public class BooKListGridAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_cookbook_listview_grid_item,parent,false);
 
             viewHolder = new BookGridViewHolder();
-            viewHolder.imageView = (ImageView) convertView.findViewById(R.id.iv_cookbook_grid_item);
+            viewHolder.imageView = (RoundedImageView) convertView.findViewById(R.id.iv_cookbook_grid_item);
             viewHolder.textView = (TextView) convertView.findViewById(R.id.tv_cookbook_grid_item_title);
 
             CookBookInfo.ListBeans.ListBean listBean = list.get(position);
             String imageid = listBean.getImageid();
            int id = Integer.parseInt(imageid);
             String url = "http://pic.ecook.cn/web/"+id+".jpg!s4";
-            Log.i("dddddd","url"+url);
           Glide.with(context).load(url).into(viewHolder.imageView);
             viewHolder.textView.setText(listBean.getName());
             convertView.setTag(viewHolder);
@@ -74,7 +74,7 @@ public class BooKListGridAdapter extends BaseAdapter {
 
 
     public class BookGridViewHolder{
-        ImageView imageView;
+        RoundedImageView imageView;
         TextView textView;
     }
 

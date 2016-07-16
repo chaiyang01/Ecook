@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_show_item"
+        style="@style/all_width_height_warp"
+        android:layout_marginLeft="@dimen/cookbook_ten">
+<ImageView
+    android:id="@+id/iv_cookbook_fresh_recycler_item"
+    android:layout_width="@dimen/cookbook_two_two_zero"
+    android:layout_height="@dimen/cookbook_two_two_zero"
+    android:scaleType="centerCrop"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="@dimen/cookbook_fifteen"
+    />
+    <TextView
+        android:id="@+id/tv_cookbook_fresh_recycler_item_name"
+        style="@style/all_width_height_warp"
+        android:textSize="@dimen/cookbook_seventeen_sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/cookbook_fifteen"
+        android:layout_below="@+id/iv_cookbook_fresh_recycler_item"
+        />
+    <RelativeLayout
+       style="@style/all_width_height_warp"
+        android:layout_below="@+id/tv_cookbook_fresh_recycler_item_name"
+        android:layout_centerHorizontal="true"
+        >
+        <TextView
+            android:id="@+id/tv_cookbook_fresh_recycler_item_like"
+           style="@style/all_width_height_warp"
+            android:drawableLeft="@drawable/ic_like"
+            />
+        <TextView
+            android:id="@+id/tv_cookbook_fresh_recycler_item_collect"
+            style="@style/all_width_height_warp"
+            android:drawableLeft="@drawable/ic_collect"
+            android:layout_toRightOf="@id/tv_cookbook_fresh_recycler_item_like"
+            android:layout_marginLeft="@dimen/cookbook_thirty"
+            />
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

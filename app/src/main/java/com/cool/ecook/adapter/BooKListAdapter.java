@@ -1,15 +1,18 @@
 package com.cool.ecook.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.cool.ecook.R;
+import com.cool.ecook.activity.FreshBooKSpecialActivity;
 import com.cool.ecook.bean.CookBookInfo;
 import com.cool.ecook.view.MyGridView;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -26,7 +29,17 @@ public class BooKListAdapter extends BaseAdapter {
     private Context context;
     private List<CookBookInfo.ListBeans> list;
     private LayoutInflater inflater;
-    public BooKListAdapter(Context context,List<CookBookInfo.ListBeans> list){
+    private OnItemClickListener mOnItemClickListener;
+    //创建Itemdd点击接口
+    public interface OnItemClickListener{
+        void OnItemClick(View view,int position);
+    }
+
+    public void setmOnItemClickListener(OnItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+    public BooKListAdapter(Context context, List<CookBookInfo.ListBeans> list){
         this.context = context;
         this.list = list;
         inflater = LayoutInflater.from(context);
@@ -63,12 +76,20 @@ public class BooKListAdapter extends BaseAdapter {
             viewHolder = (BookViewHolder) convertView.getTag();
         }
         CookBookInfo.ListBeans listBeans = list.get(position);
-        Log.i("fffffff","vvvvvv"+listBeans.toString());
         viewHolder.textView.setText(listBeans.getName());
         List<CookBookInfo.ListBeans.ListBean> listBean = listBeans.getList();
-        Log.i("fffffff","ddddd"+listBean.size());
         BooKListGridAdapter gridAdapter = new BooKListGridAdapter(context,listBean);
         viewHolder.gridView.setAdapter(gridAdapter);
+        viewHolder.gridView.getParent().requestDisallowInterceptTouchEvent(true);
+        //如果有设置 了点击接口，则进行方法回调
+        if (mOnItemClickListener != null) {
+            viewHolder.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    mOnItemClickListener.OnItemClick(view,position);
+                }
+            });
+        }
         return convertView;
     }
 

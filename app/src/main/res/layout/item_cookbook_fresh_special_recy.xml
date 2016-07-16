@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/all_width_height_match"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one_three_zero"
+        android:layout_centerInParent="true"
+        >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_cookbook_fresh_special"
+        android:layout_width="@dimen/cookbook_one_two_zero"
+        android:layout_height="@dimen/cookbook_one_zero_zero"
+        android:layout_marginLeft="@dimen/cookbook_fifteen"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="@dimen/cookbook_ten"
+        />
+
+    <TextView
+        android:id="@+id/tv_cookbook_fresh_special_name"
+        style="@style/all_width_height_warp"
+        android:layout_marginTop="@dimen/cookbook_fifteen"
+        android:layout_marginLeft="@dimen/cookbook_ten"
+        android:layout_toRightOf="@id/iv_cookbook_fresh_special"
+        android:textSize="@dimen/cookbook_twenty_sp" />
+
+
+    <TextView
+        android:id="@+id/tv_cookbook_fresh_special_num"
+        style="@style/all_width_height_warp"
+        android:layout_alignBottom="@id/iv_cookbook_fresh_special"
+        android:layout_marginBottom="@dimen/cookbook_five"
+        android:layout_marginLeft="@dimen/cookbook_ten"
+        android:layout_toRightOf="@id/iv_cookbook_fresh_special"
+        android:textSize="@dimen/cookbook_fifteen_sp" />
+        <TextView
+            android:id="@+id/tv_cookbook_fresh_special_description"
+            style="@style/all_width_height_warp"
+            android:layout_marginLeft="@dimen/cookbook_ten"
+            android:layout_toRightOf="@id/iv_cookbook_fresh_special"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/cookbook_fifteen_sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one"
+        android:background="@color/lucencys"
+        />
+    </RelativeLayout>
+</RelativeLayout>
