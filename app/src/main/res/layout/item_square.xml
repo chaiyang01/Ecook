@@ -80,7 +80,7 @@
         android:id="@+id/good_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/black_top_enjoy"
+        android:background="@drawable/recipe_thumb"
         android:layout_alignBottom="@+id/messagenum_tv"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
