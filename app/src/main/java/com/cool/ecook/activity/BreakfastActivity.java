@@ -12,6 +12,7 @@ import com.cool.ecook.R;
 import com.cool.ecook.adapter.SquareAdapter;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -34,10 +35,17 @@ public class BreakfastActivity extends AppCompatActivity {
             sid = (String) msg.obj;
         }
     };
+    private CustomProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breakfast);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(this,R.drawable.ani_progress);
+        dialog.show();
+
         //初始化控件
         initView();
         //创建数据源
@@ -103,6 +111,9 @@ public class BreakfastActivity extends AppCompatActivity {
                 message.obj = id;
                 mHandle.sendMessage(message);
                 adapter.notifyDataSetChanged();
+
+                //停止动画
+                dialog.dismiss();
             }
         });
 
