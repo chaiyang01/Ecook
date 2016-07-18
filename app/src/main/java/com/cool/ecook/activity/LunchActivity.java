@@ -1,9 +1,12 @@
 package com.cool.ecook.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.androidxx.yangjw.httplibrary.IOKCallBack;
@@ -21,6 +24,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * 第三界面广场 广告午餐
  */
@@ -78,6 +84,25 @@ public class LunchActivity extends AppCompatActivity {
         });
         //如果使用上啦
         mPtlf.setMode(PullToRefreshBase.Mode.BOTH);
+        //点击头像查看详情
+        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public String contentId;
+            public CircleImageView ci;
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ci =(CircleImageView) view.findViewById(R.id.ci_pic_show);
+                contentId = datas.get(i-1).getUserid();
+                ci.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplication(), InformationActivity.class);
+                        intent.putExtra("id",contentId);
+                        startActivity(intent);
+                    }
+                });
+            }
+        });
+
     }
     private void setupListView() {
         //主界面下拉刷新的数据源

@@ -143,14 +143,17 @@ public class SquareFragment extends Fragment {
             }
         });
         mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public String contentId;
             public CircleImageView ci;
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ci =(CircleImageView) view.findViewById(R.id.ci_pic_show);
+                contentId = datas.get(i-2).getUserid();
                 ci.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(getActivity(), InformationActivity.class);
+                        intent.putExtra("id",contentId);
                         startActivity(intent);
                     }
                 });
