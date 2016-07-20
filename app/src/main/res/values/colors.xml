@@ -150,4 +150,6 @@
     <color name="navy">#000080</color><!--海军色 -->
     <color name="black">#000000</color><!--黑色 -->
     <color name="lucency">#66bebebe</color><!--透明色 -->
+    <color name="lucencys">#e0e0e0</color><!--淡灰色 -->
+    <color name="yellows">#FFD306</color><!--透明色 -->
 </resources>

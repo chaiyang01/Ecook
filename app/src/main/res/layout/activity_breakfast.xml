@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.activity.BreakfastActivity">
+    <TextView
+        android:id="@+id/tv"
+        android:padding="@dimen/cookbook_eight"
+        android:textSize="15sp"
+        android:text="@string/cookspeak_word6"
+        style="@style/all_width_height_warp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/square_ptfl"
+        style="@style/all_width_height_match"
+        android:layout_below="@+id/tv">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+</RelativeLayout>

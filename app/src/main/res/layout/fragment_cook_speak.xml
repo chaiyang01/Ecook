@@ -31,31 +31,22 @@
                 android:layout_height="wrap_content">
                 <RadioButton
                     android:id="@+id/rb_square"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:layout_height="wrap_content"
+                    style="@style/CustomRadioButton"
                     android:textSize="15sp"
-                    android:gravity="center"
                     android:textColor="@color/orange"
                     android:drawableBottom="@drawable/title"
                     android:text="@string/cookspeak_word2"/>
                 <RadioButton
                     android:id="@+id/rb_attention"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:button="@null"
+                    style="@style/CustomRadioButton"
                     android:textSize="15sp"
-                    android:gravity="center"
                     android:text="@string/cookspeak_word3"/>
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            style="@style/all_width_height_match"
             android:id="@+id/ll_square"
             android:orientation="vertical"
-            android:layout_below="@+id/ll_radio"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_below="@+id/ll_radio"></LinearLayout>
 
 </RelativeLayout>

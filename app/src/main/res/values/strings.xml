@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ecook</string>
+    <string name="app_name">网上厨房</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -36,10 +36,12 @@
     <string name="cookspeak_word2">广场</string>
     <string name="cookspeak_word3">关注</string>
     <string name="cookspeak_word4">猫猫</string>
-    <string name="cookspeak_word5">厨说</string>
-
+    <string name="cookspeak_word5">美好的一天从早餐开始！</string>
+    <string name="cookspeak_word6">#早餐#</string>
+    <string name="cookspeak_word7">#午餐#</string>
+    <string name="cookspeak_word8">#晚餐#</string>
+    <string name="cookspeak_word9">#舌尖上的G20德国站#</string>
     <!-- TODO: CookSpeak -->
-
 
 
 </resources>

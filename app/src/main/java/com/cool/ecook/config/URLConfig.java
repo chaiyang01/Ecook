@@ -12,8 +12,13 @@ public class URLConfig {
     public static final String URL_SQUARE="http://api.ecook.cn/public/getHotTalkList.shtml";
     //第三页面广告
     public static final String URL_SQUARE2="http://api.ecook.cn/public/getTalkSquareAds.shtml";
+    //第三页面转跳的内容
+    public static final String URL_SQUARE3="http://api.ecook.cn/public/getTopicReferTalksWithoutLogin.shtml";
+    //第三页面个人信息
+    public static final String URL_SQUARE4 = "http://api.ecook.cn/public/getUserPageData.shtml";
     //图片契合地址,中间数字为替换的ID
-    public static final String PIC_ADDR = "http://pic.ecook.cn/web/14516602.jpg!s1";
+    public static final String PIC_ADDR = "http://pic.ecook.cn/web/";
+    public static final String PIC_ADDR2 = ".jpg!s1";
     //菜谱界面的listview数据
     public static final String  COOKBOOK_LISTVIEW = "http://api.ecook.cn/public/getRecipeHomeData.shtml";
 
@@ -23,4 +28,9 @@ public class URLConfig {
     public static final String INTERNET_COOK_SHOPPING_JUMP="http://mall.ecook.cn/category/list?f=ecook_show_mine&machine=868b83db44bafe15546203bbddc50360";
     //第一个界面活动跳转
     public static final String INTERNET_COOK_ACTIVITY_JUMP="http://api.ecook.cn/public/getActList.shtml";
+    //最新专辑界面数据（get）
+    public static final String COOKBOOK_SPECIAL = "http://api.ecook.cn/public/getCollectionSortListByType.shtml";
+    //最热专辑界面数据（post）
+    public static final String COOKBOOK_HOT = "http://api.ecook.cn/public/getCollectionSortListByType.shtml";
+
 }

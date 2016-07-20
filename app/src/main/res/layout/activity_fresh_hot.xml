@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/all_width_height_match"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.cool.ecook.activity.FreshActivity"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_fifteen">
+        <ImageView
+            android:id="@+id/iv_cookbook_fresh_bar_back"
+            style="@style/all_width_height_warp"
+            android:src="@drawable/topbanner_white_arrow"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="@dimen/cookbook_five"
+            />
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tb_cookbook_fresh_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            app:tabSelectedTextColor="@color/yellows"
+            app:tabIndicatorColor="@color/yellows"
+            app:tabIndicatorHeight="@dimen/cookbook_three"
+            app:tabTextAppearance="@style/TabLayoutTextSiza"
+            android:layout_marginTop="@dimen/cookbook_five"
+            />
+
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_cookbook_fresh_content_show"
+        style="@style/all_width_height_match"/>
+
+</LinearLayout>

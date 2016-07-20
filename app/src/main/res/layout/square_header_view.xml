@@ -5,6 +5,6 @@
     <com.bigkoo.convenientbanner.ConvenientBanner
         android:id="@+id/header_view_cb"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/cookbook_one_zero_zero"
         />
 </LinearLayout>

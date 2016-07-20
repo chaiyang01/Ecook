@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.activity.FreeActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/go_back_normal"/>
+    <TextView
+        android:id="@+id/tv_free"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="巧虎免费申请"/>
+    <WebView
+        android:layout_below="@+id/tv_free"
+        android:id="@+id/free_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</RelativeLayout>

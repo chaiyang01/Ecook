@@ -2,7 +2,10 @@ package com.cool.ecook.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +18,22 @@ import com.androidxx.yangjw.httplibrary.OkHttpTool;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
+import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.BreakfastActivity;
+import com.cool.ecook.activity.DinnerActivity;
+import com.cool.ecook.activity.FreeActivity;
+import com.cool.ecook.activity.LunchActivity;
+import com.cool.ecook.activity.MilkActivity;
+import com.cool.ecook.activity.TongueActivity;
 import com.cool.ecook.adapter.SquareAdapter;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.bean.SquareHeaderBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
@@ -36,10 +48,20 @@ import java.util.Map;
 public class SquareFragment extends Fragment {
 
 
+    private CustomProgressDialog dialog;
+
     public SquareFragment() {
         // Required empty public constructor
     }
 
+    private String sid;
+    private Handler mHandle = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            sid = (String) msg.obj;
+        }
+    };
     public static SquareFragment newInstance() {
         Bundle args = new Bundle();
         SquareFragment fragment = new SquareFragment();
@@ -51,13 +73,95 @@ public class SquareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_square, container, false);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(getActivity(),R.drawable.ani_progress);
+        dialog.show();
+
         //初始化控件
         initView(view);
         //添加头部数据
         setupHeaderView();
         //创建数据源
         setupListView();
+        //创建适配器
+        adapter = new SquareAdapter(datas,getContext());
+        //绑定适配器
+        ListView refreshableView = mPtlf.getRefreshableView();
+        refreshableView.setAdapter(adapter);
+        //监听事件
+        initListener();
         return view;
+    }
+    //上啦刷新监听
+    private void initListener() {
+        mPtlf.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+              datas.clear();
+              map.put("lastTalkid","");
+              setupDatas();
+              adapter.notifyDataSetChanged();
+              mPtlf.onRefreshComplete();
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+                map.put("lastTalkid",sid);
+                setupDatas();
+                adapter.notifyDataSetChanged();
+                mPtlf.onRefreshComplete();
+            }
+        });
+        //如果使用上啦
+        mPtlf.setMode(PullToRefreshBase.Mode.BOTH);
+        //广告监听
+        headerViewHolder.conventBanner.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent();
+                switch (position){
+                    case 0:
+                        intent.setClass(getActivity(), BreakfastActivity.class);
+                        break;
+                    case 1:
+                        intent.setClass(getActivity(), LunchActivity.class);
+                        break;
+                    case 2:
+                        intent.setClass(getActivity(), DinnerActivity.class);
+                        break;
+                    case 3:
+                        intent.setClass(getActivity(), FreeActivity.class);
+                        break;
+                    case 4:
+                        intent.setClass(getActivity(), MilkActivity.class);
+                        break;
+                    case 5:
+                        intent.setClass(getActivity(), TongueActivity.class);
+                        break;
+                }
+                startActivity(intent);
+            }
+        });
+        //不能这这里设置item里面的控件的监听，应该到适配器里面去设置监听
+//        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                //自定义的listview的初始化
+//                ListView listView = (ListView) view.findViewById(R.id.comment_lv);
+//                //自定义listview的监听
+//                final List<SquareBean.ListBean.CommentPoListBean> commentPoList = datas.get(i-2).getCommentPoList();
+//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        String userid = commentPoList.get(i).getUserid();
+//                        Intent intent = new Intent(getActivity(), InformationActivity.class);
+//                        intent.putExtra("id",userid);
+//                        startActivity(intent);
+//                    }
+//                });
+//            }
+//        });
     }
 
     @Override
@@ -147,11 +251,13 @@ public class SquareFragment extends Fragment {
     private Map<String,String> map = new HashMap<>();
     private List<SquareBean.ListBean> datas = new ArrayList<>();
     private SquareAdapter adapter;
-    private void setupDatas() {
-        map.put("machine","868b83db44bafe15546203bbddc50360");
+    private void setupMap(){
+        map.put("machine","50d2610986be44ca6b24f412cddc47ea");
         map.put("version","12.4.6");
-        map.put("device","GT-P5210");
-        //map.put("id","224339787");
+        map.put("device","VPhone");
+    }
+    private void setupDatas() {
+        setupMap();
         OkHttpTool.newInstance().start(URLConfig.URL_SQUARE).post(map).callback(new IOKCallBack() {
             @Override
             public void success(String result) {
@@ -161,23 +267,18 @@ public class SquareFragment extends Fragment {
                 Gson gson = new Gson();
                 SquareBean squareBean = gson.fromJson(result, SquareBean.class);
                 datas.addAll(squareBean.getList());
-                List<String[]>  list = new ArrayList<>();
-                //将GridView图片ID拆分，装进List里面
-                for (int i =0;i<datas.size();i++){
-                    String str = datas.get(i).getImageids();
-                    String[] obj = str.split(",");
-                    list.add(obj);
-                }
-                //创建适配器
-                adapter = new SquareAdapter(datas,getContext(),list);
-                //绑定适配器
-                ListView refreshableView = mPtlf.getRefreshableView();
-                refreshableView.setAdapter(adapter);
+                Message message = new Message();
+                String id = datas.get(datas.size()-1).getContentId();
+                message.obj = id;
+                mHandle.sendMessage(message);
+                adapter.notifyDataSetChanged();
+
+                //停止动画
+                dialog.dismiss();
             }
         });
 
     }
-
     private void initView(View view) {
         mPtlf = (PullToRefreshListView) view.findViewById(R.id.square_ptfl);
     }
