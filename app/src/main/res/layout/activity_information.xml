@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.cool.ecook.activity.InformationActivity">
+    tools:context=".activity.InformationActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,11 +19,11 @@
         android:src="@drawable/ic_me_home_message"
         android:layout_alignParentRight="true"
         android:id="@+id/iv_message" />
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/ic_me_home_bg"/>
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/ic_me_home_bg"/>
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ci_pic_show"
         android:layout_width="50dp"
@@ -146,14 +146,14 @@
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>
     </LinearLayout>
-    <GridView
+    <com.cool.ecook.view.MyGridView
         android:layout_below="@+id/coll_ll"
         android:id="@+id/gv_coll"
         android:horizontalSpacing="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="3">
-    </GridView>
+    </com.cool.ecook.view.MyGridView>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

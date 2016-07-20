@@ -12,16 +12,14 @@
         app:civ_border_width="4dp" />
     <TextView
         android:id="@+id/tv_commentpolist_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/all_width_height_warp"
         android:text="一般吧："
         android:layout_alignBottom="@+id/lv_pic_show"
         android:layout_toRightOf="@+id/lv_pic_show"
         android:layout_toEndOf="@+id/lv_pic_show" />
     <TextView
         android:id="@+id/tv_commentpolist_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/all_width_height_warp"
         android:text="xxxx"
         android:layout_alignTop="@+id/tv_commentpolist_username"
         android:layout_toRightOf="@+id/tv_commentpolist_username"

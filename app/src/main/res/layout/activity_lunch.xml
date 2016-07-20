@@ -4,42 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cool.ecook.activity.LunchActivity">
-    <ImageView
-        android:id="@+id/iv_pic"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/learn_default"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:text="@string/cookspeak_word7"
-        android:gravity="center"
-        android:textColor="@color/white"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/join"
-        android:layout_above="@+id/tv"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/topic_arrow_black"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/topic_share_black"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/square_ptfl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/iv_pic">
+        style="@style/all_width_height_match">
     </com.handmark.pulltorefresh.library.PullToRefreshListView>
 </RelativeLayout>

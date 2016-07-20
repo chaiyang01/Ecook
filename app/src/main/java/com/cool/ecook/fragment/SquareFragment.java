@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -25,13 +24,14 @@ import com.cool.ecook.R;
 import com.cool.ecook.activity.BreakfastActivity;
 import com.cool.ecook.activity.DinnerActivity;
 import com.cool.ecook.activity.FreeActivity;
-import com.cool.ecook.activity.InformationActivity;
 import com.cool.ecook.activity.LunchActivity;
 import com.cool.ecook.activity.MilkActivity;
+import com.cool.ecook.activity.TongueActivity;
 import com.cool.ecook.adapter.SquareAdapter;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.bean.SquareHeaderBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -41,14 +41,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 /**
  * 广场   YX
  * A simple {@link Fragment} subclass.
  */
 public class SquareFragment extends Fragment {
 
+
+    private CustomProgressDialog dialog;
 
     public SquareFragment() {
         // Required empty public constructor
@@ -73,6 +73,11 @@ public class SquareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_square, container, false);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(getActivity(),R.drawable.ani_progress);
+        dialog.show();
+
         //初始化控件
         initView(view);
         //添加头部数据
@@ -84,6 +89,7 @@ public class SquareFragment extends Fragment {
         //绑定适配器
         ListView refreshableView = mPtlf.getRefreshableView();
         refreshableView.setAdapter(adapter);
+        //监听事件
         initListener();
         return view;
     }
@@ -130,27 +136,32 @@ public class SquareFragment extends Fragment {
                     case 4:
                         intent.setClass(getActivity(), MilkActivity.class);
                         break;
+                    case 5:
+                        intent.setClass(getActivity(), TongueActivity.class);
+                        break;
                 }
                 startActivity(intent);
             }
         });
-        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public String contentId;
-            public CircleImageView ci;
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ci =(CircleImageView) view.findViewById(R.id.ci_pic_show);
-                contentId = datas.get(i-2).getUserid();
-                ci.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getActivity(), InformationActivity.class);
-                        intent.putExtra("id",contentId);
-                        startActivity(intent);
-                    }
-                });
-            }
-        });
+        //不能这这里设置item里面的控件的监听，应该到适配器里面去设置监听
+//        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                //自定义的listview的初始化
+//                ListView listView = (ListView) view.findViewById(R.id.comment_lv);
+//                //自定义listview的监听
+//                final List<SquareBean.ListBean.CommentPoListBean> commentPoList = datas.get(i-2).getCommentPoList();
+//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        String userid = commentPoList.get(i).getUserid();
+//                        Intent intent = new Intent(getActivity(), InformationActivity.class);
+//                        intent.putExtra("id",userid);
+//                        startActivity(intent);
+//                    }
+//                });
+//            }
+//        });
     }
 
     @Override
@@ -261,6 +272,9 @@ public class SquareFragment extends Fragment {
                 message.obj = id;
                 mHandle.sendMessage(message);
                 adapter.notifyDataSetChanged();
+
+                //停止动画
+                dialog.dismiss();
             }
         });
 

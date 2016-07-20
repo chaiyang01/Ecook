@@ -1,6 +1,7 @@
 package com.cool.ecook.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.InformationActivity;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.config.URLConfig;
 
@@ -78,6 +80,16 @@ public class SquareAdapter extends BaseAdapter{
         holder.tvTex.setText(squareBean.getText());
         holder.tvMessagenum.setText(squareBean.getTalkLikeWebPo().getIsLike()+"");
         holder.tvGoodnum.setText(squareBean.getTalkLikeWebPo().getLikenum()+"");
+        //圆形头像的监听
+        final String userId = data.get(i).getUserid();
+        holder.ivIconurl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, InformationActivity.class);
+                intent.putExtra("id",userId);
+                context.startActivity(intent);
+            }
+        });
         //将GridView图片ID拆分，装进List里面
         list = new ArrayList<>();
         for (int j =0;j<data.size();j++){
@@ -110,6 +122,7 @@ public class SquareAdapter extends BaseAdapter{
         TextView tvMessagenum;
         TextView tvGoodnum;
         ListView lv;
+
     }
     //GridView的适配器
     class GridAdapter extends  BaseAdapter{
@@ -191,6 +204,17 @@ public class SquareAdapter extends BaseAdapter{
             Glide.with(context).load(URLConfig.URL_PIC1+listBean.getCommentPoList().get(i).getUserimageid()+URLConfig.URL_PIC2).into(viewHolder.circleImageView);
             viewHolder.tvCommentpolistUsername.setText(listBean.getCommentPoList().get(i).getUsername()+":");
             viewHolder.tvCommentpolistText.setText(listBean.getCommentPoList().get(i).getText());
+            //自定义listview的监听
+            final List<SquareBean.ListBean.CommentPoListBean> commentPoList = listBean.getCommentPoList();
+            final String userid = commentPoList.get(i).getUserid();
+            viewHolder.circleImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, InformationActivity.class);
+                    intent.putExtra("id",userid);
+                    context.startActivity(intent);
+                }
+            });
             return view;
         }
         class ViewHolder{

@@ -1,6 +1,7 @@
 package com.cool.ecook.adapter;
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,9 +12,20 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 	private Context context;
 	private int layoutId;
 	private List<T> list;
-	
-	
-	
+
+
+	@Override
+
+	public void unregisterDataSetObserver(DataSetObserver observer) {
+
+		if (observer != null) {
+
+			super.unregisterDataSetObserver(observer);
+
+		}
+
+	}
+
 
 	public CommonAdapter(Context context, int layoutId, List<T> list) {
 		this.context = context;

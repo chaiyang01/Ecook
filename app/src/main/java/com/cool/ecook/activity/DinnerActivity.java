@@ -1,20 +1,23 @@
 package com.cool.ecook.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.androidxx.yangjw.httplibrary.IOKCallBack;
 import com.androidxx.yangjw.httplibrary.OkHttpTool;
 import com.cool.ecook.R;
 import com.cool.ecook.adapter.SquareAdapter;
+import com.cool.ecook.bean.AdHeadBean;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -24,13 +27,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 /**
  * 第三界面广场 广告晚餐
  */
 public class DinnerActivity extends AppCompatActivity {
+    //UI
     private PullToRefreshListView mPtlf;
+    private TextView tv;
+
     private String sid;
     private Handler mHandle = new Handler(){
         @Override
@@ -39,10 +43,17 @@ public class DinnerActivity extends AppCompatActivity {
             sid = (String) msg.obj;
         }
     };
+    private CustomProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dinner);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(this,R.drawable.ani_progress);
+        dialog.show();
+
         //初始化控件
         initView();
         //创建数据源
@@ -77,23 +88,38 @@ public class DinnerActivity extends AppCompatActivity {
         //如果使用上啦
         mPtlf.setMode(PullToRefreshBase.Mode.BOTH);
         //点击头像查看详情
-        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public String contentId;
-            public CircleImageView ci;
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ci =(CircleImageView) view.findViewById(R.id.ci_pic_show);
-                contentId = datas.get(i-1).getUserid();
-                ci.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getApplication(), InformationActivity.class);
-                        intent.putExtra("id",contentId);
-                        startActivity(intent);
-                    }
-                });
-            }
-        });
+//        mPtlf.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public String contentId;
+//            public CircleImageView ci;
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                ci =(CircleImageView) view.findViewById(R.id.ci_pic_show);
+//                ListView listView = (ListView) view.findViewById(R.id.comment_lv);
+//                if (i>=2){
+//                    contentId = datas.get(i-2).getUserid();
+//                }else {
+//                    return;
+//                }
+//                ci.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(getApplication(), InformationActivity.class);
+//                        intent.putExtra("id",contentId);
+//                        startActivity(intent);
+//                    }
+//                });
+//                final List<SquareBean.ListBean.CommentPoListBean> commentPoList = datas.get(i-1).getCommentPoList();
+//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        String userid = commentPoList.get(i).getUserid();
+//                        Intent intent = new Intent(getApplication(), InformationActivity.class);
+//                        intent.putExtra("id",userid);
+//                        startActivity(intent);
+//                    }
+//                });
+//            }
+//        });
 
     }
     private void setupListView() {
@@ -119,13 +145,38 @@ public class DinnerActivity extends AppCompatActivity {
                     return;
                 }
                 Gson gson = new Gson();
+                AdHeadBean adHeadBean = gson.fromJson(result, AdHeadBean.class);
+                //广告图片和介绍
+                View headerView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.addinner_show,null);
+                tv = (TextView) headerView.findViewById(R.id.tv);
+                //点回退箭头结束此页面
+                ImageView dinner = (ImageView) headerView.findViewById(R.id.iv_dinner);
+                dinner.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        finish();
+                    }
+                });
+                tv.setText(adHeadBean.getDescription());
+
+                //判断有没有头
+                int headerViewsCount = mPtlf.getRefreshableView().getHeaderViewsCount();
+                if (headerViewsCount<=1){
+                    mPtlf.getRefreshableView().addHeaderView(headerView);
+                }
+                //广告图片和介绍
                 SquareBean squareBean = gson.fromJson(result, SquareBean.class);
                 datas.addAll(squareBean.getList());
                 Message message = new Message();
+                if (datas.size()>=1){
                 String id = datas.get(datas.size()-1).getContentId();
                 message.obj = id;
                 mHandle.sendMessage(message);
+                }
                 adapter.notifyDataSetChanged();
+
+                //停止动画
+                dialog.dismiss();
             }
         });
 

@@ -49,7 +49,7 @@ public class SquareRecipeAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (view==null){
             holder = new ViewHolder();
-            view = inflater.inflate(R.layout.square_recipe_item,null);
+            view = inflater.inflate(R.layout.square_recipe_item,viewGroup,false);
             holder.iv = (ImageView) view.findViewById(R.id.recipe_iv);
             holder.tv = (TextView) view.findViewById(R.id.recipe_tv);
             view.setTag(holder);

@@ -2,13 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cool.ecook">
 
+<uses-permission android:name="android.permission.INTERNET"/>
+
+<uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,19 +24,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.AttentionActivity"></activity>
+
+        <activity android:name=".activity.SignJumpActivity"/>
+
+        <activity android:name=".activity.ShoppingJumpActivity"/>
+
+        <activity android:name=".activity.VideoJumpActivity"/>
+
+        <activity android:name=".activity.ActivityJumpActivity"/>
+
+        <activity android:name=".activity.InternetCookListViewItemJumpActivity"/>
+
+        <activity android:name=".activity.BannerJumpActivity"/>
         <activity android:name=".activity.AttentionActivity" />
         <activity android:name=".activity.FreshActivity" />
         <activity android:name=".activity.HotActivity" />
         <activity android:name=".activity.FreshBooKDetailsActivity" />
         <activity android:name=".activity.FreshBooKSpecialActivity" />
-        <activity android:name=".activity.AttentionActivity" />
         <activity android:name=".activity.BreakfastActivity" />
         <activity android:name=".activity.LunchActivity" />
         <activity android:name=".activity.FreeActivity" />
         <activity android:name=".activity.MilkActivity" />
         <activity android:name=".activity.DinnerActivity" />
         <activity android:name=".activity.InformationActivity" />
-        <activity android:name=".activity.CookBookListPassActivity"></activity>
+        <activity android:name=".activity.TongueActivity"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class InformationActivity extends AppCompatActivity {
-
+    //UI初始化
     private CircleImageView civ;
     private TextView tvName;
     private ImageView ivSex;
@@ -64,7 +64,6 @@ public class InformationActivity extends AppCompatActivity {
                 if (result==null){
                     return;
                 }
-                //Log.i("=====", "success: "+result.toString());
                 Gson gson = new Gson();
                 SquareInfoBean squareInfoBean = gson.fromJson(result, SquareInfoBean.class);
                 Glide.with(getApplicationContext()).load(URLConfig.URL_PIC1+squareInfoBean.getData().getImageid()+URLConfig.URL_PIC2).into(civ);

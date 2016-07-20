@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:text="@string/my_fragment_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:id="@+id/mine_tv" />
+    <ImageView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:src="@drawable/ic_me_home_message"
+        android:id="@+id/imageView3" />
+    <ImageView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_notify"
+        android:layout_alignTop="@+id/mine_tv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView2" />
+    <View
+        android:paddingTop="@dimen/cookbook_eight"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one"
+        android:background="@color/lightgray"
+        android:layout_below="@+id/mine_tv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </View>
+    <de.hdodenhof.circleimageview.CircleImageView
+        style="@style/all_width_height_warp"
+        android:layout_margin="@dimen/cookbook_eight"
+        android:src="@drawable/pic"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:text="xx"
+        android:layout_alignTop="@+id/view"
+        android:layout_toRightOf="@+id/view"
+        android:layout_toEndOf="@+id/view"
+        android:id="@+id/textView" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/medal_c"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:id="@+id/imageView6" />
+    <TextView
+        android:paddingTop="@dimen/cookbook_five"
+        style="@style/all_width_height_warp"
+        android:text="今日活跃值+0，还能获得885"
+        android:layout_below="@+id/textView"
+        android:layout_toRightOf="@+id/view"
+        android:layout_toEndOf="@+id/view" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/pic_mine"
+        android:layout_alignBottom="@+id/view"
+        android:layout_toRightOf="@+id/view"
+        android:layout_toEndOf="@+id/view"
+        android:id="@+id/imageView4" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:layout_above="@+id/imageView4"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_eight"
+        android:background="@color/lightgray"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view2" />
+    <ImageView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:src="@drawable/bottom_collect_yellow"
+        android:layout_below="@+id/view2"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView3"
+        android:id="@+id/imageView5" />
+    <TextView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:text="我的收藏"
+        android:id="@+id/textView2"
+        android:textSize="@dimen/cookbook_fifteen"
+        android:layout_above="@+id/view3"
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightgray"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignLeft="@+id/imageView5"
+        android:layout_alignStart="@+id/imageView5"
+        android:id="@+id/view3"></View>
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:padding="@dimen/cookbook_eight"
+        android:src="@drawable/icon_me_basket"
+        android:layout_below="@+id/view3"
+        android:layout_alignRight="@+id/imageView5"
+        android:layout_alignEnd="@+id/imageView5"
+        android:id="@+id/imageView7" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:padding="@dimen/cookbook_eight"
+        android:text="菜篮子"
+        android:textSize="@dimen/cookbook_fifteen"
+        android:layout_alignBottom="@+id/imageView7"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:id="@+id/textView3" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:text="0"
+        android:layout_alignBottom="@+id/imageView8"
+        android:layout_toLeftOf="@+id/imageView8"
+        android:layout_toStartOf="@+id/imageView8"
+        android:id="@+id/textView6" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2"
+        android:id="@+id/imageView8" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_eight"
+        android:background="@color/lightgray"
+        android:id="@+id/view4"
+        android:layout_below="@+id/imageView7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:padding="@dimen/cookbook_eight"
+        android:src="@drawable/shangcheng"
+        android:layout_below="@+id/view4"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:id="@+id/imageView9" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:paddingTop="@dimen/cookbook_ten"
+        android:textSize="@dimen/cookbook_fifteen"
+        android:text="我的厨币"
+        android:layout_below="@+id/view4"
+        android:layout_toLeftOf="@+id/imageView6"
+        android:layout_toStartOf="@+id/imageView6"
+        android:id="@+id/textView4" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:text="100"
+        android:textColor="@color/orange"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:id="@+id/textView5" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:id="@+id/imageView10"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one"
+        android:background="@color/lightgray"
+        android:id="@+id/view8"
+        android:layout_below="@+id/imageView9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></View>
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:padding="@dimen/cookbook_eight"
+        android:src="@drawable/mine_shoppinglist_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/imageView7"
+        android:layout_alignEnd="@+id/imageView7"
+        android:id="@+id/imageView12" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的订单"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView6"
+        android:layout_toStartOf="@+id/imageView6"
+        android:id="@+id/textView7" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:id="@+id/imageView11"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_alignLeft="@+id/imageView10"
+        android:layout_alignStart="@+id/imageView10" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_eight"
+        android:background="@color/lightgray"
+        android:id="@+id/view5"
+        android:layout_below="@+id/imageView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:padding="@dimen/cookbook_eight"
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_findfriend_us"
+        android:layout_below="@+id/view5"
+        android:layout_alignRight="@+id/imageView9"
+        android:layout_alignEnd="@+id/imageView9"
+        android:id="@+id/imageView13" />
+   <TextView
+       android:paddingTop="@dimen/cookbook_ten"
+       style="@style/all_width_height_warp"
+       android:text="添加好友"
+       android:layout_below="@+id/view5"
+       android:layout_toRightOf="@+id/imageView12"
+       android:layout_toEndOf="@+id/imageView12"
+       android:id="@+id/textView8" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:id="@+id/imageView14"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignLeft="@+id/imageView11"
+        android:layout_alignStart="@+id/imageView11" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_thirty_two"
+        android:background="@color/lightgray"
+        android:id="@+id/view6"
+        android:layout_below="@+id/imageView13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:padding="@dimen/cookbook_eight"
+        android:src="@drawable/me_judge_xhdpi"
+        android:layout_below="@+id/view6"
+        android:layout_alignRight="@+id/imageView13"
+        android:layout_alignEnd="@+id/imageView13"
+        android:id="@+id/imageView15" />
+    <TextView
+        style="@style/all_width_height_warp"
+        android:paddingTop="@dimen/cookbook_ten"
+        android:text="意见反馈"
+        android:layout_below="@+id/view6"
+        android:layout_toRightOf="@+id/imageView15"
+        android:layout_toEndOf="@+id/imageView15"
+        android:id="@+id/textView9" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/mine_arrow"
+        android:id="@+id/imageView16"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one"
+        android:background="@color/lightgray"
+        android:id="@+id/view7"
+        android:layout_below="@+id/imageView15"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
