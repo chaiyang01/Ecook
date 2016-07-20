@@ -70,8 +70,10 @@ public class InformationActivity extends AppCompatActivity {
                 tvName.setText(squareInfoBean.getData().getTitle());
                 if (squareInfoBean.getData().getSex().equals("0")){
                     ivSex.setImageResource(R.drawable.me_gir);
-                }else {
+                }else if (squareInfoBean.getData().getSex().equals("1")){
                     ivSex.setImageResource(R.drawable.me_boy);
+                }else {
+                    ivSex.setImageResource(R.drawable.me_gir);
                 }
                 if (squareInfoBean.getData().getMedal().equals("gold")){
                     imageView.setImageResource(R.drawable.medal_a);
