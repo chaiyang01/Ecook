@@ -11,10 +11,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.cool.ecook.R;
-import com.cool.ecook.activity.AttentionActivity;
+import com.cool.ecook.thirdlogin.androidclassdemo.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +59,7 @@ public class MyFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), AttentionActivity.class);
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
-    }
+   }
 }
