@@ -53,6 +53,7 @@ public class InformationActivity extends AppCompatActivity {
         //加载数据
         setupDatas();
     }
+    //
     private Map<String,String> map = new HashMap<>();
     private SquareInfoAdapter adapter ;
     private SquareRecipeAdapter reAdapter;
