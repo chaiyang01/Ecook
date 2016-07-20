@@ -23,8 +23,10 @@
     <dimen name="cookbook_fifteen">15dp</dimen>
     <dimen name="cookbook_fifteen_sp">15dp</dimen>
     <dimen name="cookbook_thirty">30dp</dimen>
+    <dimen name="cookbook_thirty_two">32dp</dimen>
     <dimen name="cookbook_three">3dp</dimen>
     <dimen name="cookbook_two_two_zero">220dp</dimen>
+    <dimen name="cookbook_one_five_zero">150dp</dimen>
     <!--cy end -->
 
 
