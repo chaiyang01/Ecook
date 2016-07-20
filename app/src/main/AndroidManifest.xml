@@ -69,6 +69,7 @@
         <activity android:name=".activity.InformationActivity" />
         <activity android:name=".activity.TongueActivity"></activity>
         <activity android:name=".activity.SpaceImageDetailActivity"></activity>
+        <activity android:name=".activity.CookBookListPassActivity"></activity>
 
         <activity android:name=".thirdlogin.androidclassdemo.LoginActivity"/>
         <!-- umeng begin 2016-7-8 -->
