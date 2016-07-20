@@ -8,12 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.cool.ecook.activity.AttentionActivity;
 import com.cool.ecook.fragment.AddFragment;
 import com.cool.ecook.fragment.CookBookFragment;
 import com.cool.ecook.fragment.CookSpeakFragment;
 import com.cool.ecook.fragment.InterCookFragment;
 import com.cool.ecook.fragment.MyFragment;
+import com.cool.ecook.thirdlogin.androidclassdemo.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
     //UI
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.rb_add:
 //                if (addFragment==null){
-                    Intent intent = new Intent(this, AttentionActivity.class);
+                    Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
 //                    addFragment = AddFragment.newInstance();
 //                    transaction.add(R.id.ll_main,addFragment,"add");
