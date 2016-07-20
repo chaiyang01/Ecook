@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
 import com.cool.ecook.activity.ActivityJumpActivity;
 import com.cool.ecook.activity.BannerJumpActivity;
+import com.cool.ecook.activity.BannerPostJumpActivity;
 import com.cool.ecook.activity.ShoppingJumpActivity;
 import com.cool.ecook.activity.SignJumpActivity;
 import com.cool.ecook.activity.VideoJumpActivity;
@@ -177,12 +178,22 @@ public class InterCookFragment extends Fragment {
         convenientBanner.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-               String url = mlist.get(position).getUrl();
-            Intent intent = new Intent(getActivity(), BannerJumpActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("url",url);
-                intent.putExtra("bundle",bundle);
-                startActivity(intent);
+                String url = mlist.get(position).getUrl();
+                if (url.indexOf("http") > -1) {
+                    Intent intent = new Intent(getActivity(), BannerJumpActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", url);
+                    intent.putExtra("bundle", bundle);
+                    startActivity(intent);
+                }else{
+                    String url1 = url.substring(28,url.length());
+                    Log.i("kkkkk","jjjjjj"+url1);
+                    Intent intent2 = new Intent(getActivity(), BannerPostJumpActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", url1);
+                    intent2.putExtra("bundle", bundle);
+                    startActivity(intent2);
+                }
             }
         });
 
@@ -260,36 +271,6 @@ public class InterCookFragment extends Fragment {
                     }
                 });
     }
-//        OkHttpTool.newInstance().start("http://api.ecook.cn/public/get124Homedata.shtml").callback(new IOKCallBack() {
-//
-//            @Override
-//            public void success(String result) {
-//                Gson gson = new Gson();
-//                InternetCookMainInfo  internetCookMainInfo = gson.fromJson(result,InternetCookMainInfo.class);
-//                if (!mlist.isEmpty()){
-//                    return;
-//                }
-//                mlist.addAll(internetCookMainInfo.getData().getBannerList());
-//
-//                convenientBanner.getViewPager().getAdapter().notifyDataSetChanged();
-//
-//                nlist.addAll(internetCookMainInfo.getData().getButtonList());
-//
-//                if (nlist.isEmpty()){
-//                    return;
-//                }
-//
-//                buttonListSet(nlist);
-//
-//                plist.addAll(internetCookMainInfo.getData().getContentList());
-//
-//                numberId= plist.get(plist.size()-1).getSortId();
-//
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
-//
-//    }
     /*
      *对主界面的四个Button进行设置
      */

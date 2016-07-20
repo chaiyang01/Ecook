@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
 import com.cool.ecook.activity.InformationActivity;
+import com.cool.ecook.activity.SpaceImageDetailActivity;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.config.URLConfig;
 
@@ -147,7 +148,7 @@ public class SquareAdapter extends BaseAdapter{
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
+        public View getView(final int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder = null;
             if (view==null){
                 viewHolder = new ViewHolder();
@@ -158,6 +159,14 @@ public class SquareAdapter extends BaseAdapter{
                 viewHolder = (ViewHolder) view.getTag();
             }
             Glide.with(context).load(URLConfig.URL_PIC1+strings[i]+URLConfig.URL_PIC2).into(viewHolder.imageView);
+            viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, SpaceImageDetailActivity.class);
+                    intent.putExtra("images",strings[i]);
+                    context.startActivity(intent);
+                }
+            });
             return view;
         }
         //GridView里面的控件
