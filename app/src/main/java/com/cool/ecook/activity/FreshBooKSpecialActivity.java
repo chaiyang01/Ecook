@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,6 +27,7 @@ import com.cool.ecook.config.URLConfig;
 import com.cool.ecook.view.MyRecyclerView;
 import com.cool.ecook.view.MySrcollView;
 import com.google.gson.Gson;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -67,13 +70,16 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
     private MySrcollView scrollView;
     private LinearLayout rl_one;
     private RelativeLayout rl_two;
+    float sca  = 0.0f;
+    float de = 0;
+    private RoundedImageView userImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fresh_book_special);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
          id = intent.getStringExtra("id");
          names = intent.getStringExtra("name");
          nums = intent.getStringExtra("num");
@@ -85,8 +91,9 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
 
         //创建适配器
       initAdapter();
-        //对每道菜谱进行点击监听
-       initListener();
+
+
+
     }
 
     private void initListener() {
@@ -94,7 +101,31 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
         adapter.setmOnItemClickListener(new BookUserInfoRecyAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(View view, int position) {
+                Intent intent = new Intent(FreshBooKSpecialActivity.this,InternetCookListViewItemJumpActivity.class);
 
+
+            }
+        });
+
+        userPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(FreshBooKSpecialActivity.this,InformationActivity.class);
+                String userid = details.getUserid();
+                intent1.putExtra("id",userid);
+                startActivity(intent1);
+                Log.i("rrrr","bbbb"+userid);
+            }
+        });
+
+//对每道菜谱进行点击监听
+        commentAdapter.setmOnItemClickListener(new BookUserInfoCommetRecyAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, int position,String id) {
+                Intent intent2 = new Intent(FreshBooKSpecialActivity.this,InformationActivity.class);
+                intent2.putExtra("id",id);
+                startActivity(intent2);
+                Log.i("rrrr","ccccc"+id);
             }
         });
 
@@ -102,26 +133,36 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
         scrollView.setOnScrollListener(new MySrcollView.OnScrollListener() {
             @Override
             public void OnScroll(int scrollY) {
+
+
+
                 if (scrollY > 200) {
+                    int index = scrollY;
+                    int je = 200;
+                    if (sca == 201){
+                        rl_two.setAlpha(0.0f);
+                    }
+
+                   // sca+=0.1;
                 rl_one.setVisibility(View.GONE);
                     rl_two.setVisibility(View.VISIBLE);
-                    rotateyAnimRun(rl_two);
+                        while (index > 200  ) {
+                            sca += 0.02f;
+                            rl_two.setAlpha(sca);
+                            break;
+                        }
                 }else if (scrollY < 150){
                     rl_one.setVisibility(View.VISIBLE);
-
+                    sca = 0.0f;
                     rl_two.setAlpha(0.0f);
                 }
             }
         });
 
-    }
 
-    private void rotateyAnimRun(View view) {
-        ObjectAnimator.ofFloat(view,"ddd",0.0f,1.0f)
-        .setDuration(3000)
-        .start();
 
     }
+
 
     private void initAdapter() {
         //菜谱数目详细列表的适配器
@@ -137,6 +178,9 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
          scrollView = (MySrcollView) findViewById(R.id.sv_cookbook_detail);
          rl_one = (LinearLayout) findViewById(R.id.cookbook_bar_plan_a);
          rl_two = (RelativeLayout) findViewById(R.id.cookbook_bar_plan_b);
+
+        View view = LayoutInflater.from(this).inflate(R.layout.item_cookbook_list_pass_list,null);
+         userImage = (RoundedImageView) view.findViewById(R.id.iv_cookbook_list_pass);
 
         //头部图片和名字
         book_image = (ImageView) findViewById(R.id.iv_icon_cookbook);
@@ -197,12 +241,12 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
                         Gson gson = new Gson();
                         CookBookDetailsInfo info = gson.fromJson(response,CookBookDetailsInfo.class);
                         details = info.getDetails();
-                        CookBookDetailsInfo.DetailsBean details = info.getDetails();
 
                         mDetailsList.addAll(info.getDetails().getRecipeList());
                         mCommetlsList.addAll(info.getDetails().getCommentList());
                        adapter.notifyDataSetChanged();
                         commentAdapter.notifyDataSetChanged();
+                        initListener();
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -235,4 +279,5 @@ public class FreshBooKSpecialActivity extends AppCompatActivity {
                     comment_num.setText("评论("+size+")");
                 }
             }
+
 }

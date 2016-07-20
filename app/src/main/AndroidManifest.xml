@@ -25,18 +25,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.AttentionActivity"></activity>
-
         <activity android:name=".activity.SignJumpActivity"/>
-
         <activity android:name=".activity.ShoppingJumpActivity"/>
-
         <activity android:name=".activity.VideoJumpActivity"/>
-
-        <activity android:name=".activity.ActivityJumpActivity"/>
-
         <activity android:name=".activity.InternetCookListViewItemJumpActivity"/>
-
         <activity android:name=".activity.BannerJumpActivity"/>
         <activity android:name=".activity.AttentionActivity" />
         <activity android:name=".activity.FreshActivity" />
@@ -50,6 +42,8 @@
         <activity android:name=".activity.DinnerActivity" />
         <activity android:name=".activity.InformationActivity" />
         <activity android:name=".activity.TongueActivity"></activity>
+        <activity android:name=".activity.CookBookListPassActivity"></activity>
+
     </application>
 
 </manifest>

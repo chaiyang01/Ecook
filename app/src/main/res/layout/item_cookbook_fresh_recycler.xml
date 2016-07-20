@@ -8,8 +8,8 @@
         android:layout_marginLeft="@dimen/cookbook_ten">
 <ImageView
     android:id="@+id/iv_cookbook_fresh_recycler_item"
-    android:layout_width="@dimen/cookbook_two_two_zero"
-    android:layout_height="@dimen/cookbook_two_two_zero"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
     android:scaleType="centerCrop"
     android:layout_centerHorizontal="true"
     android:layout_marginTop="@dimen/cookbook_fifteen"
@@ -20,6 +20,7 @@
         android:textSize="@dimen/cookbook_seventeen_sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/cookbook_fifteen"
+        android:singleLine="true"
         android:layout_below="@+id/iv_cookbook_fresh_recycler_item"
         />
     <RelativeLayout

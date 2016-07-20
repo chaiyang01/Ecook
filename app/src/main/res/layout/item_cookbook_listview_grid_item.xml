@@ -9,8 +9,8 @@
 
 
         <RelativeLayout
-            android:layout_width="@dimen/cookbook_one_one_zero"
-            android:layout_height="@dimen/cookbook_one_one_zero"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
             android:layout_marginLeft="@dimen/cookbook_five"
             android:layout_marginRight="@dimen/cookbook_five"
            android:layout_marginTop="10dp"
