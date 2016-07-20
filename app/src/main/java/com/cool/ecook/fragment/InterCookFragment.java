@@ -149,7 +149,9 @@ public class InterCookFragment extends Fragment {
                             public void success( String result) {
                                 Gson gson = new Gson();
                         InternetCookRefreshInfo   internetCookRefreshInfo = gson.fromJson(result, InternetCookRefreshInfo.class);
-
+                                if(internetCookRefreshInfo==null){
+                                    return;
+                                }
                                 if (internetCookRefreshInfo.getData()==null || internetCookRefreshInfo.getData().getList()==null){
                                     prflv.onRefreshComplete();
                                     return;

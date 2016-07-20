@@ -1,3 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merger version="3"><dataSet config="main"><source path="C:\Users\ningyachao\AndroidStudioProjects\MyApplication\Ecook\library\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="C:\Users\ningyachao\AndroidStudioProjects\MyApplication\Ecook\library\src\release\jniLibs"/></dataSet></merger>
-<merger version="3"><dataSet config="main"><source path="F:\workspace\Ecook\library\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="F:\workspace\Ecook\library\src\release\jniLibs"/></dataSet></merger>
