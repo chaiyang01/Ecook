@@ -17,6 +17,10 @@ public class URLConfig {
     //菜谱界面的listview数据
     public static final String  COOKBOOK_LISTVIEW = "http://api.ecook.cn/public/getRecipeHomeData.shtml";
 
-
-
+    //第一个主界面签到跳转
+    public static final String  INTERNET_COOK_SIGN_JUMP="http://api.ecook.cn/public/signinConfig.shtml?machine=868b83db44bafe15546203bbddc50360&version=12.4.6&device=GT-P5210";
+    //第一个界面商城跳转
+    public static final String INTERNET_COOK_SHOPPING_JUMP="http://mall.ecook.cn/category/list?f=ecook_show_mine&machine=868b83db44bafe15546203bbddc50360";
+    //第一个界面活动跳转
+    public static final String INTERNET_COOK_ACTIVITY_JUMP="http://api.ecook.cn/public/getActList.shtml";
 }

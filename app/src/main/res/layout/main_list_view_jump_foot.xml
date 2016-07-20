@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/tv_foot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="小贴士"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:background="#E0E0E0"
+    android:padding="3dp"/>
+<LinearLayout
+    android:id="@+id/ll_foot"
+    android:layout_below="@id/tv_foot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/yellow_dot"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/tip_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="hahahaha"/>
+
+</LinearLayout>
+<ImageView
+    android:id="@+id/image_foot_haha"
+    android:layout_width="match_parent"
+    android:layout_below="@id/ll_foot"
+    android:layout_height="70dp"
+    android:src="@mipmap/ic_launcher"
+    android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:id="@+id/image_line_dot_two"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:src="@drawable/dotted_line"
+        android:layout_below="@id/image_foot_haha"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:layout_below="@id/image_line_dot_two"
+        android:id="@+id/foot_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  评论"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@drawable/yellow_image"/>
+    <com.cool.ecook.view.MyListView
+        android:id="@+id/foot_list_view"
+        android:layout_below="@id/foot_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.cool.ecook.view.MyListView>
+    <LinearLayout
+        android:id="@+id/ll_empty_view"
+        android:layout_below="@id/foot_list_view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/image_view_empty"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/no_comment"
+            />
+        <TextView
+            android:id="@+id/tv_show_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂时没有评论，赶紧来评论吧~"
+            android:gravity="center"/>
+        <ImageView
+            android:id="@+id/image_line_dot_two_new"
+            android:layout_width="match_parent"
+
+            android:layout_height="3dp"
+            android:src="@drawable/dotted_line"
+            android:layout_below="@id/tv_show_empty"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
