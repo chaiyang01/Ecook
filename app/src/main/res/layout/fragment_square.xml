@@ -5,7 +5,6 @@
     tools:context="com.cool.ecook.fragment.SquareFragment">
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/square_ptfl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        style="@style/all_width_height_match">
     </com.handmark.pulltorefresh.library.PullToRefreshListView>
 </FrameLayout>

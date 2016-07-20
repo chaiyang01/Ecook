@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.activity.TongueActivity">
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_two_two_zero"
+        android:src="@drawable/learn_default"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_one_five_zero"
+        android:text="@string/cookspeak_word9"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_below="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/cookbook_ten"
+        android:text="@string/cookspeak_word5"/>
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:background="@drawable/join"
+        android:layout_above="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/cookbook_thirty_two"/>
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/topic_arrow_black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        style="@style/all_width_height_warp"
+        android:src="@drawable/topic_share_black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/square_ptfl"
+        style="@style/all_width_height_match"
+        android:layout_below="@+id/tv">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+</RelativeLayout>

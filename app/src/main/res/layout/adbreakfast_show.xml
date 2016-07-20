@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.bigkoo.convenientbanner.ConvenientBanner
-        android:id="@+id/header_view_cb"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/cookbook_one_zero_zero"
-        />
+    <TextView
+        android:padding="@dimen/cookbook_eight"
+        android:textSize="15sp"
+        android:text="@string/cookspeak_word6"
+        style="@style/all_width_height_warp"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

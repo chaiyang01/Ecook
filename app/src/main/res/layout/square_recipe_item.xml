@@ -2,22 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="@dimen/cookbook_ten">
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/cookbook_one_five_zero"
+        android:layout_height="@dimen/cookbook_one_zero_zero"
         android:scaleType="centerCrop"
         android:id="@+id/recipe_iv" />
     <TextView
         android:id="@+id/recipe_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/all_width_height_warp"
         android:text="甜品"
-        android:paddingBottom="15dp"
         android:layout_below="@+id/recipe_iv"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="43dp"
-        android:layout_marginStart="43dp" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
