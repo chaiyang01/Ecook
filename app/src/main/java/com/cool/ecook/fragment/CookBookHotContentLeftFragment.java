@@ -14,6 +14,7 @@ import com.cool.ecook.R;
 import com.cool.ecook.activity.FreshBooKDetailsActivity;
 import com.cool.ecook.adapter.BookRecyclerAdapter;
 import com.cool.ecook.bean.CookBookFreshInfo;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.cool.ecook.view.DividerGridItemDecoration;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -32,6 +33,7 @@ public class CookBookHotContentLeftFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private BookRecyclerAdapter adapter;
     private List<CookBookFreshInfo.ListBean> list = new ArrayList<>();
+    private CustomProgressDialog dialog;
 
     public static CookBookHotContentLeftFragment newInstance(Bundle bundle){
         CookBookHotContentLeftFragment fragment = new CookBookHotContentLeftFragment();
@@ -42,6 +44,11 @@ public class CookBookHotContentLeftFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(getActivity(),R.drawable.ani_progress);
+        dialog.show();
+
         initData();
     }
 
@@ -66,6 +73,8 @@ public class CookBookHotContentLeftFragment extends Fragment {
                        list.addAll(info.getList());
                         adapter.notifyDataSetChanged();
 
+                        //停止动画
+                        dialog.dismiss();
                     }
                 });
 

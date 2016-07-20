@@ -1,5 +1,6 @@
 package com.cool.ecook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.cool.ecook.activity.AttentionActivity;
 import com.cool.ecook.fragment.AddFragment;
 import com.cool.ecook.fragment.CookBookFragment;
 import com.cool.ecook.fragment.CookSpeakFragment;
@@ -114,37 +116,38 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 }
                 break;
             case R.id.rb_add:
-                if (addFragment==null){
-                    addFragment = AddFragment.newInstance();
-                    transaction.add(R.id.ll_main,addFragment,"add");
-                    if (cookBookFragment!=null){
-                        transaction.hide(cookBookFragment);
-                    }
-                    if (interCookFragment!=null){
-                        transaction.hide(interCookFragment);
-                    }
-                    if (cookSpeakFragment!=null){
-                        transaction.hide(cookSpeakFragment);
-                    }
-                    if (myFragment!=null){
-                        transaction.hide(myFragment);
-                    }
-
-                }else {
-                    transaction.show(addFragment);
-                    if (cookBookFragment!=null){
-                        transaction.hide(cookBookFragment);
-                    }
-                    if (interCookFragment!=null){
-                        transaction.hide(interCookFragment);
-                    }
-                    if (cookSpeakFragment!=null){
-                        transaction.hide(cookSpeakFragment);
-                    }
-                    if (myFragment!=null){
-                        transaction.hide(myFragment);
-                    }
-                }
+//                if (addFragment==null){
+                    Intent intent = new Intent(this, AttentionActivity.class);
+                    startActivity(intent);
+//                    addFragment = AddFragment.newInstance();
+//                    transaction.add(R.id.ll_main,addFragment,"add");
+//                    if (cookBookFragment!=null){
+//                        transaction.hide(cookBookFragment);
+//                    }
+//                    if (interCookFragment!=null){
+//                        transaction.hide(interCookFragment);
+//                    }
+//                    if (cookSpeakFragment!=null){
+//                        transaction.hide(cookSpeakFragment);
+//                    }
+//                    if (myFragment!=null){
+//                        transaction.hide(myFragment);
+//                    }
+//                }else {
+//                    transaction.show(addFragment);
+//                    if (cookBookFragment!=null){
+//                        transaction.hide(cookBookFragment);
+//                    }
+//                    if (interCookFragment!=null){
+//                        transaction.hide(interCookFragment);
+//                    }
+//                    if (cookSpeakFragment!=null){
+//                        transaction.hide(cookSpeakFragment);
+//                    }
+//                    if (myFragment!=null){
+//                        transaction.hide(myFragment);
+//                    }
+//                }
                 break;
             case R.id.rb_cookspeak:
                 if (cookSpeakFragment==null){

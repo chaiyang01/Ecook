@@ -25,6 +25,7 @@ import com.cool.ecook.activity.HotActivity;
 import com.cool.ecook.adapter.BooKListAdapter;
 import com.cool.ecook.bean.CookBookInfo;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -56,6 +57,7 @@ public class CookBookFragment extends Fragment{
     private GridView gridView;
     private List<CookBookInfo.ListBeans> list = new ArrayList<>();
     private BooKListAdapter listAdapter;
+    private CustomProgressDialog dialog;
 
     //构造方法
     public CookBookFragment(){
@@ -76,6 +78,11 @@ public class CookBookFragment extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(getActivity(),R.drawable.ani_progress);
+        dialog.show();
+
         //准备数据
         initdata();
     }
@@ -100,6 +107,9 @@ public class CookBookFragment extends Fragment{
                         String urlHot = "http://pic.ecook.cn/web/"+info.getHotest()+".jpg";
                         Glide.with(getActivity()).load(urlFresh).into(fresh);
                         Glide.with(getActivity()).load(urlHot).into(hot);
+
+                        //停止动画
+                        dialog.dismiss();
                     }
                 });
     }

@@ -31,6 +31,7 @@ import com.cool.ecook.adapter.SquareAdapter;
 import com.cool.ecook.bean.SquareBean;
 import com.cool.ecook.bean.SquareHeaderBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -46,6 +47,8 @@ import java.util.Map;
  */
 public class SquareFragment extends Fragment {
 
+
+    private CustomProgressDialog dialog;
 
     public SquareFragment() {
         // Required empty public constructor
@@ -70,6 +73,11 @@ public class SquareFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_square, container, false);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(getActivity(),R.drawable.ani_progress);
+        dialog.show();
+
         //初始化控件
         initView(view);
         //添加头部数据
@@ -264,6 +272,9 @@ public class SquareFragment extends Fragment {
                 message.obj = id;
                 mHandle.sendMessage(message);
                 adapter.notifyDataSetChanged();
+
+                //停止动画
+                dialog.dismiss();
             }
         });
 
