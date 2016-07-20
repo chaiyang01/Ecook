@@ -34,11 +34,15 @@ import com.cool.ecook.bean.InternetCookRefreshInfo;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.Call;
 
 /**
  * 网上厨房
@@ -221,36 +225,71 @@ public class InterCookFragment extends Fragment {
      *初始化banner数据
      */
     private void loadBannerDatas() {
-        OkHttpTool.newInstance().start("http://api.ecook.cn/public/get124Homedata.shtml").callback(new IOKCallBack() {
+        OkHttpUtils.get().url("http://api.ecook.cn/public/get124Homedata.shtml")
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
 
-            @Override
-            public void success(String result) {
-                Gson gson = new Gson();
-                InternetCookMainInfo  internetCookMainInfo = gson.fromJson(result,InternetCookMainInfo.class);
-                if (!mlist.isEmpty()){
-                    return;
-                }
-                mlist.addAll(internetCookMainInfo.getData().getBannerList());
+                    }
 
-                convenientBanner.getViewPager().getAdapter().notifyDataSetChanged();
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Gson gson = new Gson();
+                        InternetCookMainInfo internetCookMainInfo = gson.fromJson(response, InternetCookMainInfo.class);
+                        if (!mlist.isEmpty()) {
+                            return;
+                        }
+                        mlist.addAll(internetCookMainInfo.getData().getBannerList());
 
-                nlist.addAll(internetCookMainInfo.getData().getButtonList());
+                        convenientBanner.getViewPager().getAdapter().notifyDataSetChanged();
 
-                if (nlist.isEmpty()){
-                    return;
-                }
+                        nlist.addAll(internetCookMainInfo.getData().getButtonList());
 
-                buttonListSet(nlist);
+                        if (nlist.isEmpty()) {
+                            return;
+                        }
 
-                plist.addAll(internetCookMainInfo.getData().getContentList());
+                        buttonListSet(nlist);
 
-                numberId= plist.get(plist.size()-1).getSortId();
+                        plist.addAll(internetCookMainInfo.getData().getContentList());
 
-                adapter.notifyDataSetChanged();
-            }
-        });
+                        numberId = plist.get(plist.size() - 1).getSortId();
 
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
+//        OkHttpTool.newInstance().start("http://api.ecook.cn/public/get124Homedata.shtml").callback(new IOKCallBack() {
+//
+//            @Override
+//            public void success(String result) {
+//                Gson gson = new Gson();
+//                InternetCookMainInfo  internetCookMainInfo = gson.fromJson(result,InternetCookMainInfo.class);
+//                if (!mlist.isEmpty()){
+//                    return;
+//                }
+//                mlist.addAll(internetCookMainInfo.getData().getBannerList());
+//
+//                convenientBanner.getViewPager().getAdapter().notifyDataSetChanged();
+//
+//                nlist.addAll(internetCookMainInfo.getData().getButtonList());
+//
+//                if (nlist.isEmpty()){
+//                    return;
+//                }
+//
+//                buttonListSet(nlist);
+//
+//                plist.addAll(internetCookMainInfo.getData().getContentList());
+//
+//                numberId= plist.get(plist.size()-1).getSortId();
+//
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+//
+//    }
     /*
      *对主界面的四个Button进行设置
      */
