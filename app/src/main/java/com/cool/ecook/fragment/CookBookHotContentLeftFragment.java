@@ -15,6 +15,7 @@ import com.cool.ecook.activity.FreshBooKDetailsActivity;
 import com.cool.ecook.adapter.BookRecyclerAdapter;
 import com.cool.ecook.bean.CookBookFreshInfo;
 import com.cool.ecook.view.DividerGridItemDecoration;
+import com.cool.ecook.view.MyGridView;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -88,6 +89,7 @@ public class CookBookHotContentLeftFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cookbook_fresh_content_left,null);
          mRecyclerView = (RecyclerView) view.findViewById(R.id.rv_book_fresh_conten);
+        // mRecyclerView = (MyGridView) view.findViewById(R.id.rv_book_fresh_conten);
         GridLayoutManager manager = new GridLayoutManager(getActivity(),2);
         mRecyclerView.setLayoutManager(manager);
         mRecyclerView.addItemDecoration(new DividerGridItemDecoration(getActivity()));
@@ -106,6 +108,7 @@ public class CookBookHotContentLeftFragment extends Fragment {
 
     private void initAdapter() {
         adapter = new BookRecyclerAdapter(getActivity(),list);
+
         mRecyclerView.setAdapter(adapter);
     }
 }

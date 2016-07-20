@@ -160,11 +160,16 @@ public class CookBookFragment extends Fragment{
         //使用接口回调监听GridView的点击事件
         listAdapter.setmOnItemClickListener(new BooKListAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, int position) {
+            public void OnItemClick(View view, int listPosition, int gridPosition) {
                 Intent intent = new Intent(getActivity(), CookBookListPassActivity.class);
-
+                CookBookInfo.ListBeans listBeans = list.get(listPosition);
+                List<CookBookInfo.ListBeans.ListBean> list = listBeans.getList();
+                String id = list.get(gridPosition).getId();
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
+
+
         });
 
     }

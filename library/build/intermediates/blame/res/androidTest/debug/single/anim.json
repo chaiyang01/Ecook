@@ -1,11 +1,19 @@
 [
     {
+        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
+    },
+    {
+        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
     },
     {
-        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
-        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
     },
     {
         "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
@@ -16,28 +24,20 @@
         "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
-        "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
-    },
-    {
         "merged": "C:\\Users\\ningyachao\\AndroidStudioProjects\\MyApplication\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
         "source": "C:\\Users\\ningyachao\\AndroidStudioProjects\\MyApplication\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     },
     {
-        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
-    },
-    {
-        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
-        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
-    },
-    {
-        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\ningyachao\\AndroidStudioProjects\\MyApplication\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
         "source": "C:\\Users\\ningyachao\\AndroidStudioProjects\\MyApplication\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "F:\\workspace\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "F:\\workspace\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "C:\\Users\\HP\\AndroidStudioProjects\\Ecook\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     },
     {
         "merged": "C:\\Users\\ningyachao\\AndroidStudioProjects\\MyApplication\\Ecook\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",

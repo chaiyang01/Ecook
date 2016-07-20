@@ -92,6 +92,12 @@ public class CookBookHotContentRightFragment extends Fragment {
             @Override
             public void OnItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), FreshBooKSpecialActivity.class);
+                CookBookSpecialInfo.ListBean listBean = mListBean.get(position);
+                String id = listBean.getId();
+                intent.putExtra("id",id);
+                intent.putExtra("imageId",listBean.getImageid());
+                intent.putExtra("name",listBean.getName());
+                intent.putExtra("num",listBean.getRecipeCount());
                 startActivity(intent);
             }
         });

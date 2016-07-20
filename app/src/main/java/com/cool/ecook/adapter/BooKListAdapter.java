@@ -32,7 +32,7 @@ public class BooKListAdapter extends BaseAdapter {
     private OnItemClickListener mOnItemClickListener;
     //创建Itemdd点击接口
     public interface OnItemClickListener{
-        void OnItemClick(View view,int position);
+        void OnItemClick(View view,int listPosition,int gridPosition);
     }
 
     public void setmOnItemClickListener(OnItemClickListener mOnItemClickListener) {
@@ -61,7 +61,7 @@ public class BooKListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         BookViewHolder viewHolder = null;
         if (convertView ==null){
             convertView = inflater.inflate(R.layout.item_cookbook_listview_grid,parent,false);
@@ -85,8 +85,8 @@ public class BooKListAdapter extends BaseAdapter {
         if (mOnItemClickListener != null) {
             viewHolder.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    mOnItemClickListener.OnItemClick(view,position);
+                public void onItemClick(AdapterView<?> parent, View view, int mposition, long id) {
+                    mOnItemClickListener.OnItemClick(view,position,mposition);
                 }
             });
         }
