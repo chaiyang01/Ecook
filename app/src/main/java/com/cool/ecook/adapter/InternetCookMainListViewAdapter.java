@@ -60,12 +60,14 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
                     Intent intent = new Intent(context, InternetCookListViewItemJumpActivity.class);
 
                     Bundle bundle = new Bundle();
+                    String type = bean.getType()+"";
                     String id =bean.getId()+"";
                     String collectionNum = bean.getCollectionNum()+"";
                     String userImageId =bean.getUserImage();
                     bundle.putString("id",id);
                     bundle.putString("collectionNum",collectionNum);
                     bundle.putString("userImageId",userImageId);
+                    bundle.putString("type",type);
                     intent.putExtra("bundle",bundle);
                     context.startActivity(intent);
 
@@ -102,11 +104,13 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
 
                     Bundle bundle = new Bundle();
                     String id =bean.getId()+"";
+                    String type = bean.getType()+"";
                     String collectionNum = bean.getCollectionNum()+"";
                     String userImageId =bean.getUserImage();
                     bundle.putString("id",id);
                     bundle.putString("collectionNum",collectionNum);
                     bundle.putString("userImageId",userImageId);
+                    bundle.putString("type",type);
                     intent.putExtra("bundle",bundle);
                     context.startActivity(intent);
 
@@ -135,15 +139,17 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, InternetCookListViewItemJumpActivity.class);
-
                     Bundle bundle = new Bundle();
+                    String type = bean.getType()+"";
                     String id =bean.getId()+"";
                     String collectionNum = bean.getCollectionNum()+"";
                     String userImageId =bean.getUserImage();
                     bundle.putString("id",id);
                     bundle.putString("collectionNum",collectionNum);
                     bundle.putString("userImageId",userImageId);
+                    bundle.putString("type",type);
                     intent.putExtra("bundle",bundle);
+
                     context.startActivity(intent);
 
                 }

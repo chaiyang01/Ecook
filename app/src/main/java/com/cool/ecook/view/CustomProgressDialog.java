@@ -41,7 +41,6 @@ public class CustomProgressDialog extends ProgressDialog {
 			@Override
 			public void run() {
 				mAnimation.start();
-
 			}
 		});
 	}

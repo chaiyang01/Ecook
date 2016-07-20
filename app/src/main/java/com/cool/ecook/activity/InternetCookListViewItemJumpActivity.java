@@ -68,6 +68,9 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
     private ImageView imageViewAd;
     private TextView textViewCommentNumber;
     private LinearLayout linearLayout;
+    private ImageView imageView;
+    private ImageView imageViewPlay;
+    private String type;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,10 +82,22 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
         id = bundle.getString("id");
         collectionNum = bundle.getString("collectionNum");
         userImageId = bundle.getString("userImageId");
+        type =bundle.getString("type");
 
         initView();
         initContentData();
         initMainData();
+        initListener();
+    }
+
+    private void initListener() {
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
 
@@ -111,7 +126,6 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
                         mainListView.addHeaderView(headView);
                         mainAdapter = new MainListViewAdapter(InternetCookListViewItemJumpActivity.this, R.layout.main_list_view_item, mainList);
                         mainListView.setAdapter(mainAdapter);
-
                         String url = "http://pic.ecook.cn/web/" + mainListViewInfo.getList().get(0).getImageid() + ".jpg";
                         Glide.with(InternetCookListViewItemJumpActivity.this).load(url).into(imageViewHeadMain);
 
@@ -171,6 +185,8 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
 
     private void initView() {
 
+        imageView = (ImageView) findViewById(R.id.main_list_view_item_back);
+
         mainListView = (ListView) findViewById(R.id.main_item_jump_list_view);
 
         mainListView.setDivider(null);
@@ -182,6 +198,14 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
         headListview.setDivider(null);
 
         imageViewHeadMain = (ImageView) headView.findViewById(R.id.main_head_image_view);
+
+        imageViewPlay = (ImageView) headView.findViewById(R.id.play);
+
+        if (type.equals("3")){
+            imageViewPlay.setVisibility(View.VISIBLE);
+        }else {
+            imageViewPlay.setVisibility(View.GONE);
+        }
 
         textViewTitle = (TextView) headView.findViewById(R.id.main_tv_title);
 
