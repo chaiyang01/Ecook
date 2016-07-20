@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <RelativeLayout
+        android:id="@+id/video_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/topbanner_white_arrow"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频菜谱"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ADADAD"
+            />
+    </RelativeLayout>
+
+<android.support.v4.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_container"
+    android:layout_below="@id/video_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+
+        android:id="@+id/video_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>

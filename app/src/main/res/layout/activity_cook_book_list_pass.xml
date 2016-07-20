@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cool.ecook.activity.CookBookListPassActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cookbook_fifty">
+
+        <ImageView
+            android:id="@+id/iv_cookbook_list_pass_bar_back"
+            style="@style/all_width_height_warp"
+            android:layout_marginTop="@dimen/cookbook_five"
+            android:scaleType="centerCrop"
+            android:src="@drawable/topbanner_white_arrow" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cookbook_diy"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/cookbook_twenty_sp"
+            />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:textSize="20sp"
+        android:background="@color/lucencys"
+        />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pulllv_cook_book_list_pass"
+        style="@style/all_width_height_match"/>
+
+
+</LinearLayout>

@@ -156,4 +156,5 @@
     <color name="lucency">#66bebebe</color><!--透明色 -->
     <color name="lucencys">#e0e0e0</color><!--淡灰色 -->
     <color name="yellows">#FFD306</color><!--透明色 -->
+    <color name="lucencyss">#F0F0F0</color><!--透明色 -->
 </resources>

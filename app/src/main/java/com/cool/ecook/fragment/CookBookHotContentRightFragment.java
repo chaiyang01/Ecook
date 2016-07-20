@@ -53,6 +53,7 @@ public class CookBookHotContentRightFragment extends Fragment {
     }
 
     private void initData() {
+        mListBean.clear();
         OkHttpUtils.post().url(URLConfig.COOKBOOK_HOT)
                 .addParams("machine","f7b9d5f586a588130b89aa03fe7264f3")
                 .addParams("version","12.4.6")
@@ -101,6 +102,12 @@ public class CookBookHotContentRightFragment extends Fragment {
             @Override
             public void OnItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), FreshBooKSpecialActivity.class);
+                CookBookSpecialInfo.ListBean listBean = mListBean.get(position);
+                String id = listBean.getId();
+                intent.putExtra("id",id);
+                intent.putExtra("imageId",listBean.getImageid());
+                intent.putExtra("name",listBean.getName());
+                intent.putExtra("num",listBean.getRecipeCount());
                 startActivity(intent);
             }
         });

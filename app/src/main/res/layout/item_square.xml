@@ -60,8 +60,7 @@
         android:layout_below="@+id/tv_text"></com.cool.ecook.view.MyGridView>
     <ImageView
         android:id="@+id/message_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/all_width_height_warp"
         android:background="@drawable/mine_collection_cotent"
         android:layout_below="@+id/pic_gv"
         android:layout_alignParentRight="true"
@@ -70,8 +69,7 @@
         android:layout_marginEnd="89dp" />
     <TextView
         android:id="@+id/messagenum_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+       style="@style/all_width_height_warp"
         android:text="0"
         android:layout_above="@+id/comment_lv"
         android:layout_alignLeft="@+id/message_iv"
@@ -102,7 +100,6 @@
         android:focusable="false"
         android:id="@+id/comment_lv"
         android:layout_below="@+id/message_iv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/all_width_height_match"
         android:divider="@null"></com.cool.ecook.view.MyListView>
 </RelativeLayout>

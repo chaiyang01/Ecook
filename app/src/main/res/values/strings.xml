@@ -4,6 +4,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string-array name="test">
+       <item>"ssssss"</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+        <item>ssssss</item>
+    </string-array>
+
     <!--  LH -->
     <string name="my_fragment_word1">拥有一个网上厨房账号</string>
     <string name="my_fragment_word2">结交各路厨神</string>
@@ -28,6 +41,7 @@
     <string name="cookbook_top">菜谱</string>
     <string name="cookbook_fresh">新鲜菜</string>
     <string name="cookbook_hot">周最热</string>
+    <string name="cookbook_diy">自制下午茶</string>
     <!--cy end -->
 
 

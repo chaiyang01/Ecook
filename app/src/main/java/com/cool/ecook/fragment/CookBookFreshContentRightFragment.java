@@ -56,6 +56,7 @@ public class CookBookFreshContentRightFragment extends Fragment {
     }
 
     private void initData() {
+        mListBean.clear();
         OkHttpUtils.get().url(URLConfig.COOKBOOK_SPECIAL).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -64,7 +65,6 @@ public class CookBookFreshContentRightFragment extends Fragment {
 
             @Override
             public void onResponse(String response, int id) {
-
                 Gson gson = new Gson();
                 CookBookSpecialInfo info = gson.fromJson(response,CookBookSpecialInfo.class);
                 mListBean.addAll(info.getList());
@@ -103,6 +103,12 @@ public class CookBookFreshContentRightFragment extends Fragment {
             @Override
             public void OnItemClick(View view, int position) {
                 Intent intent = new Intent(getActivity(), FreshBooKSpecialActivity.class);
+                CookBookSpecialInfo.ListBean listBean = mListBean.get(position);
+                String id = listBean.getId();
+                intent.putExtra("id",id);
+                intent.putExtra("imageId",listBean.getImageid());
+                intent.putExtra("name",listBean.getName());
+                intent.putExtra("num",listBean.getRecipeCount());
                 startActivity(intent);
             }
         });

@@ -19,6 +19,7 @@ import android.widget.RadioGroup;
 import com.androidxx.yangjw.httplibrary.OkHttpTool;
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.CookBookListPassActivity;
 import com.cool.ecook.activity.FreshActivity;
 import com.cool.ecook.activity.FreshBooKSpecialActivity;
 import com.cool.ecook.activity.HotActivity;
@@ -169,10 +170,16 @@ public class CookBookFragment extends Fragment{
         //使用接口回调监听GridView的点击事件
         listAdapter.setmOnItemClickListener(new BooKListAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(), FreshBooKSpecialActivity.class);
+            public void OnItemClick(View view, int listPosition, int gridPosition) {
+                Intent intent = new Intent(getActivity(), CookBookListPassActivity.class);
+                CookBookInfo.ListBeans listBeans = list.get(listPosition);
+                List<CookBookInfo.ListBeans.ListBean> list = listBeans.getList();
+                String id = list.get(gridPosition).getId();
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
+
+
         });
 
     }
