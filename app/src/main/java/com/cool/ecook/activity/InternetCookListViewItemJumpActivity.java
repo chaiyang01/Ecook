@@ -42,6 +42,7 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
     private String id;
     private ListView mainListView;
 
+    //三个listView的布局
     private List<ComentInfo.InfoBean.CommentBean> commentList = new ArrayList<>();
 
     private List<MainListViewInfo.ListBean.MaterialListBean> headList = new ArrayList<>();
