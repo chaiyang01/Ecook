@@ -1,0 +1,52 @@
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.fragment.CookSpeakFragment">
+        <TextView
+            android:id="@+id/tv"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_horizontal"
+            android:text="@string/cookspeak_word1"
+            android:textSize="50sp"/>
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:background="@drawable/talk_notify_camera"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <LinearLayout
+            android:id="@+id/ll_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/tv">
+            <RadioGroup
+                android:id="@+id/rg_cookspeak"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rb_square"
+                    style="@style/CustomRadioButton"
+                    android:textSize="30sp"
+                    android:textColor="@color/orange"
+                    android:drawableBottom="@drawable/bigline"
+                    android:text="@string/cookspeak_word2"/>
+                <RadioButton
+                    android:id="@+id/rb_attention"
+                    style="@style/CustomRadioButton"
+                    android:textSize="30sp"
+                    android:text="@string/cookspeak_word3"/>
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            style="@style/all_width_height_match"
+            android:id="@+id/ll_square"
+            android:orientation="vertical"
+            android:layout_below="@+id/ll_radio"></LinearLayout>
+
+</RelativeLayout>
