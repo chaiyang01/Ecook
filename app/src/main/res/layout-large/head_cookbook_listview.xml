@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            >
+            <ImageView
+                android:id="@+id/iv_cookbook_fresh"
+                style="@style/cook_head_iv"
+                />
+
+            <ImageView
+                android:id="@+id/iv_cook_fresh"
+                style="@style/all_width_height_warp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/left_top_image" />
+
+            <TextView
+               style="@style/all_width_height_warp"
+                android:layout_below="@id/iv_cook_fresh"
+                android:layout_centerHorizontal="true"
+                android:text="@string/cookbook_fresh"
+                android:textColor="@color/white"
+                android:textSize="@dimen/cookbook_seventeen" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="300dp">
+
+            <ImageView
+                android:id="@+id/iv_cookbook_hot"
+               style="@style/cook_head_iv" />
+
+            <ImageView
+                android:id="@+id/iv_cook_hot"
+                style="@style/all_width_height_warp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/right_top_image" />
+
+            <TextView
+               style="@style/all_width_height_warp"
+                android:layout_below="@id/iv_cook_hot"
+                android:layout_centerHorizontal="true"
+                android:text="@string/cookbook_hot"
+                android:textColor="@color/white"
+                android:textSize="@dimen/cookbook_seventeen" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cool.ecook.fragment.InterCookFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/internet_cook_above"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp">
+    <ImageView
+        android:id="@+id/image_view_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_logo_ecook"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/icon_search"
+        android:layout_toRightOf="@id/image_view_internet"
+        android:layout_toLeftOf="@+id/image_view_recipe_basket"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="搜菜名-食材-厨友"/>
+    <ImageView
+        android:id="@+id/image_view_recipe_basket"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_recipe_basket"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pull_to_fresh_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/internet_cook_above"
+        android:layout_marginTop="5dp"
+        >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</RelativeLayout>

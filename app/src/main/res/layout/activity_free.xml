@@ -5,15 +5,22 @@
     android:layout_height="match_parent"
     tools:context="com.cool.ecook.activity.FreeActivity">
     <ImageView
+        android:id="@+id/iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/go_back_normal"/>
+    <TextView
+        android:layout_toRightOf="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingTop="8dp"
+        android:text="返回"/>
     <TextView
         android:id="@+id/tv_free"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:gravity="center"
-        android:text="巧虎免费申请"/>
+        android:text="抓钱猫送福利啦！"/>
     <WebView
         android:layout_below="@+id/tv_free"
         android:id="@+id/free_web"

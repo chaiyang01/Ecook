@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:descendantFocusability="blocksDescendants"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ci_pic_show"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:civ_border_color="#ffffff"
         android:clickable="true"
         app:civ_border_width="4dp" />
     <TextView
-        android:padding="10dp"
+        android:padding="15dp"
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cookspeak_word4"
+        android:textSize="@dimen/cookbook_thirty_two"
         android:textColor="#606060"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ci_pic_show"
@@ -24,6 +24,7 @@
     <TextView
         android:paddingLeft="10dp"
         android:id="@+id/tv_displaytime"
+        android:textSize="@dimen/cookbook_thirty_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cookspeak_word4"
@@ -34,14 +35,16 @@
         android:id="@+id/tv_splitText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/cookbook_thirty_two"
         android:text="@string/cookspeak_word4"
         android:layout_below="@+id/tv_username"
         android:layout_toRightOf="@+id/tv_displaytime"
         android:layout_toEndOf="@+id/tv_displaytime" />
     <TextView
         android:paddingLeft="10dp"
-        android:paddingTop="14dp"
+        android:paddingTop="20dp"
         android:id="@+id/tv_text"
+        android:textSize="@dimen/cookbook_thirty_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/cookspeak_word5"
@@ -57,45 +60,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="2"
-        android:layout_below="@+id/tv_text">
-    </com.cool.ecook.view.MyGridView>
+        android:layout_below="@+id/tv_text"></com.cool.ecook.view.MyGridView>
     <ImageView
         android:id="@+id/message_iv"
-        style="@style/all_width_height_warp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/mine_collection_cotent"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp"
         android:layout_below="@+id/pic_gv"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="89dp"
-        android:layout_marginEnd="89dp" />
+        android:layout_toLeftOf="@+id/messagenum_tv"
+        android:layout_toStartOf="@+id/messagenum_tv" />
     <TextView
         android:id="@+id/messagenum_tv"
-       style="@style/all_width_height_warp"
+        style="@style/all_width_height_warp"
         android:text="0"
-        android:layout_above="@+id/comment_lv"
-        android:layout_alignLeft="@+id/message_iv"
-        android:layout_alignStart="@+id/message_iv"
-        android:layout_marginLeft="33dp"
-        android:layout_marginStart="33dp" />
+        android:textSize="@dimen/cookbook_thirty_two"
+        android:layout_marginRight="59dp"
+        android:layout_marginEnd="59dp"
+        android:layout_alignBottom="@+id/message_iv"
+        android:layout_toLeftOf="@+id/good_iv"
+        android:layout_toStartOf="@+id/good_iv" />
     <ImageView
         android:id="@+id/good_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/recipe_thumb"
-        android:layout_alignBottom="@+id/messagenum_tv"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp" />
+        android:layout_below="@+id/pic_gv"
+        android:layout_toLeftOf="@+id/goodnum_tv"
+        android:layout_toStartOf="@+id/goodnum_tv"
+        android:layout_marginRight="53dp"
+        android:layout_marginEnd="53dp" />
     <TextView
         android:id="@+id/goodnum_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:layout_below="@+id/pic_gv"
+        android:textSize="@dimen/cookbook_thirty_two"
+        android:paddingRight="15dp"
+        android:layout_alignBottom="@+id/good_iv"
         android:layout_alignRight="@+id/tv_text"
-        android:paddingBottom="5dp"
-        android:paddingRight="8dp" />
+        android:layout_alignEnd="@+id/tv_text" />
     <com.cool.ecook.view.MyListView
         android:focusable="false"
         android:id="@+id/comment_lv"
