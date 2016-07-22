@@ -1,6 +1,7 @@
 package com.cool.ecook.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.FreshBooKSpecialActivity;
 import com.cool.ecook.bean.SquareInfoBean;
 import com.cool.ecook.config.URLConfig;
 
@@ -56,9 +58,26 @@ public class SquareInfoAdapter extends BaseAdapter{
         }else {
             holder = (ViewHolder) view.getTag();
         }
-        SquareInfoBean.DataBean.CollectionSortListBean listBean = datas.get(i);
+        final SquareInfoBean.DataBean.CollectionSortListBean listBean = datas.get(i);
         Glide.with(context).load(URLConfig.URL_PIC1+listBean.getImageid()+URLConfig.URL_PIC2).into(holder.iv);
         holder.tv.setText(listBean.getName());
+        //菜谱点击事件
+        holder.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,FreshBooKSpecialActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                String id1 = listBean.getId();
+                String imageid  = listBean.getImageid();
+                String name = listBean.getName();
+                String collectCount = "5";
+                intent.putExtra("id",id1);
+                intent.putExtra("name",name);
+                intent.putExtra("imageId",imageid);
+                intent.putExtra("num",collectCount);
+                context.startActivity(intent);
+            }
+        });
         return view;
     }
     private static class ViewHolder{

@@ -2,6 +2,7 @@ package com.cool.ecook.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -159,11 +160,23 @@ public class SquareAdapter extends BaseAdapter{
                 viewHolder = (ViewHolder) view.getTag();
             }
             Glide.with(context).load(URLConfig.URL_PIC1+strings[i]+URLConfig.URL_PIC2).into(viewHolder.imageView);
+            final ViewHolder finalViewHolder = viewHolder;
             viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, SpaceImageDetailActivity.class);
-                    intent.putExtra("images",strings[i]);
+                    Bundle bundle = new Bundle();
+                    //将存图片的数组传过去
+                    bundle.putSerializable("DATA",strings) ;
+                    intent.putExtras(bundle) ;
+                    intent.putExtra("id",i+"");
+                    //自定义ImageView需要的一些参数
+                    int[] location = new int[2];
+                    finalViewHolder.imageView.getLocationOnScreen(location);
+                    intent.putExtra("locationX", location[0]);//必须
+                    intent.putExtra("locationY", location[1]);//必须
+                    intent.putExtra("width",  finalViewHolder.imageView.getWidth());//必须
+                    intent.putExtra("height",  finalViewHolder.imageView.getHeight());//必须
                     context.startActivity(intent);
                 }
             });
