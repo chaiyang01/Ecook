@@ -26,7 +26,7 @@ public class BookUserInfoCommetRecyAdapter extends RecyclerView.Adapter<BookUser
     private List<CookBookDetailsInfo.DetailsBean.CommentListBean> detailsList;
 
     public interface OnItemClickListener{
-        void OnItemClick(View view, int position);
+        void OnItemClick(View view, int position,String id);
     }
 
     public void setmOnItemClickListener(OnItemClickListener mOnItemClickListener) {
@@ -51,6 +51,7 @@ public class BookUserInfoCommetRecyAdapter extends RecyclerView.Adapter<BookUser
         String name = commentListBean.getUsernickname();
             String time = commentListBean.getDisplaytime();
             String content = commentListBean.getText();
+        final String userid = commentListBean.getUserid();
         String url = URLConfig.PIC_ADDR+imageid+URLConfig.PIC_ADDR2;
         Glide.with(context).load(url).into(holder.imageView);
         holder.name.setText(name);
@@ -61,7 +62,7 @@ public class BookUserInfoCommetRecyAdapter extends RecyclerView.Adapter<BookUser
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mOnItemClickListener.OnItemClick(v,position);
+                    mOnItemClickListener.OnItemClick(v,position,userid);
 
                 }
             });

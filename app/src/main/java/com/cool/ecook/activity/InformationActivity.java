@@ -16,11 +16,14 @@ import com.cool.ecook.adapter.SquareRecipeAdapter;
 import com.cool.ecook.bean.SquareInfoBean;
 import com.cool.ecook.config.URLConfig;
 import com.google.gson.Gson;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.Call;
 
 public class InformationActivity extends AppCompatActivity {
     //UI初始化
@@ -50,24 +53,32 @@ public class InformationActivity extends AppCompatActivity {
         //加载数据
         setupDatas();
     }
+    //
     private Map<String,String> map = new HashMap<>();
     private SquareInfoAdapter adapter ;
     private SquareRecipeAdapter reAdapter;
     private void setupDatas() {
-        map.put("machine","d02c35fb0454e400bba7f3e2882cfd9a");
-        map.put("version","12.4.6");
-        map.put("device","Samsung+Galaxy+S4+-+4.3+-+API+18+-+1080x1920");
-        map.put("id",id);
-        OkHttpTool.newInstance().start(URLConfig.URL_SQUARE4).post(map).callback(new IOKCallBack() {
+        OkHttpUtils.post().url(URLConfig.URL_SQUARE4)
+                .addParams("machine","d02c35fb0454e400bba7f3e2882cfd9a")
+                .addParams("version","12.4.6")
+                .addParams("device","Samsung+Galaxy+S4+-+4.3+-+API+18+-+1080x1920")
+                .addParams("id",id)
+                .build()
+                .execute(new StringCallback() {
             @Override
-            public void success(String result) {
-                if (result==null){
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(String response, int id) {
+                if (response==null){
                     return;
                 }
                 Gson gson = new Gson();
-                SquareInfoBean squareInfoBean = gson.fromJson(result, SquareInfoBean.class);
+                SquareInfoBean squareInfoBean = gson.fromJson(response, SquareInfoBean.class);
                 Glide.with(getApplicationContext()).load(URLConfig.URL_PIC1+squareInfoBean.getData().getImageid()+URLConfig.URL_PIC2).into(civ);
-                tvName.setText(squareInfoBean.getData().getTitle());
+                        tvName.setText(squareInfoBean.getData().getTitle());
                 if (squareInfoBean.getData().getSex().equals("0")){
                     ivSex.setImageResource(R.drawable.me_gir);
                 }else if (squareInfoBean.getData().getSex().equals("1")){

@@ -1,12 +1,16 @@
 package com.cool.ecook.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.androidxx.yangjw.httplibrary.IOKCallBack;
@@ -34,6 +38,7 @@ public class VideoJumpActivity  extends AppCompatActivity{
     private InternetCookVideoButtonjumpAdapter adapter;
     private String idnumber;
     private ListView listView;
+    private ImageView imageView;
 
 
     @Override
@@ -103,6 +108,39 @@ public class VideoJumpActivity  extends AppCompatActivity{
             }
         });
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String ids = mlist.get(position-1).getId()+"";
+
+                String collectionNum = mlist.get(position-1).getCollectCount();
+
+                String userImageId = mlist.get(position-1).getAuthorimageid();
+
+                String type ="3";
+
+                Intent intent = new Intent(VideoJumpActivity.this, InternetCookListViewItemJumpActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("id",ids);
+                bundle.putString("type",type);
+                bundle.putString("collectionNum",collectionNum);
+                bundle.putString("userImageId",userImageId);
+                intent.putExtra("bundle",bundle);
+                startActivity(intent);
+
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
     }
 
     private void initData(final SwipeRefreshLayout swipe ) {
@@ -138,6 +176,8 @@ public class VideoJumpActivity  extends AppCompatActivity{
     }
 
     private void initView() {
+
+        imageView = (ImageView) findViewById(R.id.video_back);
 
         swipeRefreshLayout= (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 

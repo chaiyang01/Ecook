@@ -4,7 +4,7 @@ package com.cool.ecook.config;
  * Created by lenovo on 2016/7/13.
  */
 public class URLConfig {
-    //图片前缀网址
+    //图片前缀网址(原图)
     public static final String URL_PIC1="http://pic.ecook.cn/web/" ;
     public static final String URL_PIC2=".jpg";
     //图片前缀网址
@@ -16,9 +16,9 @@ public class URLConfig {
     public static final String URL_SQUARE3="http://api.ecook.cn/public/getTopicReferTalksWithoutLogin.shtml";
     //第三页面个人信息
     public static final String URL_SQUARE4 = "http://api.ecook.cn/public/getUserPageData.shtml";
-    //图片契合地址,中间数字为替换的ID
+    //图片契合地址,中间数字为替换的ID（高清）
     public static final String PIC_ADDR = "http://pic.ecook.cn/web/";
-    public static final String PIC_ADDR2 = ".jpg!s1";
+    public static final String PIC_ADDR2 = ".jpg!s4";
     //菜谱界面的listview数据
     public static final String  COOKBOOK_LISTVIEW = "http://api.ecook.cn/public/getRecipeHomeData.shtml";
     //菜谱界面listview的Item的点击数据
