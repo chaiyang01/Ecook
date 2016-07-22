@@ -17,7 +17,7 @@ import com.cool.ecook.activity.AttentionActivity;
  */
 public class AddFragment extends Fragment {
 
-
+//
     public AddFragment() {
         // Required empty public constructor
     }
