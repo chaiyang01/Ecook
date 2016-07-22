@@ -94,8 +94,7 @@
         android:layout_below="@+id/pic_gv"
         android:layout_alignRight="@+id/tv_text"
         android:paddingBottom="5dp"
-        android:paddingRight="8dp"
-         />
+        android:paddingRight="8dp" />
     <com.cool.ecook.view.MyListView
         android:focusable="false"
         android:id="@+id/comment_lv"
