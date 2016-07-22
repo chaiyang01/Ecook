@@ -11,12 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cool.ecook.R;
-import com.cool.ecook.activity.FreshBooKDetailsActivity;
+import com.cool.ecook.activity.InternetCookListViewItemJumpActivity;
 import com.cool.ecook.adapter.BookRecyclerAdapter;
 import com.cool.ecook.bean.CookBookFreshInfo;
 import com.cool.ecook.view.CustomProgressDialog;
 import com.cool.ecook.view.DividerGridItemDecoration;
-import com.cool.ecook.view.MyGridView;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -85,9 +84,17 @@ public class CookBookHotContentLeftFragment extends Fragment {
         adapter.setmOnItemCilckListener(new BookRecyclerAdapter.OnItemCilckListener() {
             @Override
             public void OnItemCilck(View view, int position) {
-                Intent intent = new Intent(getActivity(), FreshBooKDetailsActivity.class);
-
-
+                Intent intent = new Intent(getActivity(),InternetCookListViewItemJumpActivity.class);
+                Bundle bundle = new Bundle();
+                String type = list.get(position).getType();
+                String id1 = list.get(position).getId();
+                String imageid = list.get(position).getImageid();
+                String collectCount = list.get(position).getCollectCount();
+                bundle.putString("type",type);
+                bundle.putString("id",id1);
+                bundle.putString("userImageId",imageid);
+                bundle.putString("collectionNum",collectCount);
+                intent.putExtra("bundle",bundle);
                 startActivity(intent);
             }
         });

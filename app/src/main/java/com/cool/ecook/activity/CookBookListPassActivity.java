@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 
 import com.cool.ecook.R;
@@ -21,6 +22,11 @@ import java.util.List;
 
 import okhttp3.Call;
 
+/**
+ * 菜谱下面listView点击后跳转后的界面
+ * cy
+ *
+ */
 public class CookBookListPassActivity extends AppCompatActivity {
 
     private ImageView back_bar;
@@ -28,6 +34,7 @@ public class CookBookListPassActivity extends AppCompatActivity {
     private String id;
     private List<CookBookGridInfo.ListBean> list = null;
     private BooKListPassAdapter adapter;
+    private CookBookGridInfo info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,27 @@ public class CookBookListPassActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               //跳转到菜谱的详细做法
+                Intent intent = new Intent(CookBookListPassActivity.this,InternetCookListViewItemJumpActivity.class);
+                Bundle bundle = new Bundle();
+                String type = list.get(position-1).getType();
+                String id1 = list.get(position-1).getId();
+                String imageid = list.get(position-1).getImageid();
+                String collectCount = list.get(position-1).getCollectCount();
+                bundle.putString("type",type);
+                bundle.putString("id",id1);
+                bundle.putString("userImageId",imageid);
+                bundle.putString("collectionNum",collectCount);
+                intent.putExtra("bundle",bundle);
+                startActivity(intent);
+
+
             }
         });
     }
@@ -83,9 +111,10 @@ public class CookBookListPassActivity extends AppCompatActivity {
                     public void onResponse(String response, int id) {
                        // Log.i("bbbbbbb","dddd"+response);
                         Gson gson = new Gson();
-                        CookBookGridInfo info = gson.fromJson(response,CookBookGridInfo.class);
+                         info = gson.fromJson(response,CookBookGridInfo.class);
                          list.addAll(info.getList());
                         adapter.notifyDataSetChanged();
+                        initListener();
                     }
                 });
     }

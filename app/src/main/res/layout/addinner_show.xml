@@ -22,17 +22,19 @@
         android:padding="@dimen/cookbook_ten"
         />
     <RelativeLayout
-        android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
         android:gravity="center"
         android:layout_above="@+id/tv"
         android:layout_alignBottom="@+id/iv_pic"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/cookbook_thirty_two"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/shape_pic">
         <ImageView
-            style="@style/all_width_height_warp"
-            android:src="@drawable/no_work"
+            android:layout_width="25dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_step_camera"
+            android:scaleType="centerCrop"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -42,7 +44,9 @@
             android:text="参与这个话题"
             android:textColor="@color/white"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            />
     </RelativeLayout>
     <ImageView
         android:onClick="onClick"

@@ -134,7 +134,6 @@ public class SignJumpActivity extends AppCompatActivity {
 
                 mlist.addAll(jumpInfo.getDetail().getAdList());
 
-                Log.i("mmmm","llllll"+mlist.size());
 
                 setBanner();
 

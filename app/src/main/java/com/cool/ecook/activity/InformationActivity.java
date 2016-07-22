@@ -15,6 +15,7 @@ import com.cool.ecook.adapter.SquareInfoAdapter;
 import com.cool.ecook.adapter.SquareRecipeAdapter;
 import com.cool.ecook.bean.SquareInfoBean;
 import com.cool.ecook.config.URLConfig;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -40,11 +41,17 @@ public class InformationActivity extends AppCompatActivity {
     private String id;
     private GridView gvColl;
     private GridView gvMenu;
+    private CustomProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
+
+        //Dialog动画
+        dialog =new CustomProgressDialog(this,R.drawable.ani_progress);
+        dialog.show();
+
         Intent intent = getIntent();
         //获得上个页面传过来的ID
         id = intent.getStringExtra("id");
@@ -113,6 +120,8 @@ public class InformationActivity extends AppCompatActivity {
                 reAdapter = new SquareRecipeAdapter(squareInfoBean.getData().getRecipeList(),getApplicationContext());
                 //绑定适配器
                 gvMenu.setAdapter(reAdapter);
+
+                dialog.dismiss();
             }
         });
     }

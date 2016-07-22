@@ -46,7 +46,7 @@
                 <RelativeLayout
                     android:id="@+id/rl_useinfo"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/ri_one"
                     >
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -268,22 +268,24 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 />
-            <ImageView
+            <CheckBox
                 android:id="@+id/iv_bar_two_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/topbanner_white_blackstar"
+                android:button="@null"
+                android:background="@drawable/chekbox_bg_star"
                 android:layout_toLeftOf="@id/iv_bar_two_share"
                 android:layout_marginRight="10dp"
                 />
-            <ImageView
+            <CheckBox
                 android:id="@+id/iv_bar_two_zan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/topbanner_white_zan"
+                android:button="@null"
                 android:layout_toLeftOf="@id/iv_bar_two_star"
+                android:drawableLeft="@drawable/chekbox_bg_whith"
                 android:layout_marginRight="10dp"
                 />
 
@@ -325,21 +327,23 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 />
-            <ImageView
+            <CheckBox
                 android:id="@+id/iv_bar_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/topbanner_transparent_star"
+                android:button="@null"
                 android:layout_toLeftOf="@id/iv_bar_share"
+                android:background="@drawable/chekbox_bg__star_whith"
                 android:layout_marginRight="10dp"
                 />
-            <ImageView
+            <CheckBox
                 android:id="@+id/iv_bar_zan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
-                android:src="@drawable/topbanner_transparent_zan"
+                android:button="@null"
+                android:background="@drawable/chekbox_bg"
                 android:layout_toLeftOf="@id/iv_bar_star"
                 android:layout_marginRight="10dp"
                 />

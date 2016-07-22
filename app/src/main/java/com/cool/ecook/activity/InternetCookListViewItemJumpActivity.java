@@ -25,6 +25,7 @@ import com.cool.ecook.adapter.MainListViewAdapter;
 import com.cool.ecook.bean.ComentInfo;
 import com.cool.ecook.bean.MainListViewInfo;
 import com.cool.ecook.utlis.MikyouMetricListViewHeightUtils;
+import com.cool.ecook.view.CustomProgressDialog;
 import com.cool.ecook.view.MyListView;
 import com.google.gson.Gson;
 
@@ -72,11 +73,15 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageView imageViewPlay;
     private String type;
+    private CustomProgressDialog dialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list_view_item_jump);
+        //Dialog动画
+        dialog =new CustomProgressDialog(this,R.drawable.ani_progress);
+        dialog.show();
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("bundle");
@@ -147,6 +152,8 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
                         } else {
                             textViewDetail.setText(mainListViewInfo.getList().get(0).getTipList().get(0).getDetails());
                         }
+                        //停止动画
+                        dialog.dismiss();
 
                     }
                 }
