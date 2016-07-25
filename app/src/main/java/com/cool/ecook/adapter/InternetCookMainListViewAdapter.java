@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.FreshBooKSpecialActivity;
+import com.cool.ecook.activity.InformationActivity;
 import com.cool.ecook.activity.InternetCookListViewItemJumpActivity;
+import com.cool.ecook.bean.ComentInfo;
 import com.cool.ecook.bean.ContentListBean;
 import com.cool.ecook.bean.InternetCookMainInfo;
 
@@ -77,6 +80,17 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
             String url1 = "http://pic.ecook.cn/web/"+bean.getUserImage()+".jpg!s1";
             Glide.with(context).load(url1).into(circleImageViewUser);
 
+            circleImageViewUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, InformationActivity.class);
+
+                    intent.putExtra("id",bean.getUserId()+"");
+
+                    context.startActivity(intent);
+                }
+            });
+
             textViewAuthor.setText(bean.getUserNick());
 
             textViewCookName.setText(bean.getTitle());
@@ -91,11 +105,24 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
             textViewCookInfo.setVisibility(View.VISIBLE);
             textViewPeoplelikes.setVisibility(View.VISIBLE);
         }
-        if (number == 1){
+        if (number == 1||number==4){
             Glide.with(context).load(url).into(imageViewMainPictrue);
             imageViewVideo.setVisibility(View.GONE);
             String url1 = "http://pic.ecook.cn/web/"+bean.getUserImage()+".jpg!s1";
             Glide.with(context).load(url1).into(circleImageViewUser);
+
+            circleImageViewUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, InformationActivity.class);
+
+                    intent.putExtra("id",bean.getUserId()+"");
+
+                    context.startActivity(intent);
+                }
+            });
+
+
 
             imageViewMainPictrue.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -135,21 +162,30 @@ public class InternetCookMainListViewAdapter extends CommonAdapter<ContentListBe
         if (number==2){
             Glide.with(context).load(url).into(imageViewMainPictrue);
 
+            circleImageViewUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, InformationActivity.class);
+
+                    intent.putExtra("id",bean.getUserId()+"");
+
+                    context.startActivity(intent);
+                }
+            });
+
+
             imageViewMainPictrue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, InternetCookListViewItemJumpActivity.class);
-                    Bundle bundle = new Bundle();
-                    String type = bean.getType()+"";
-                    String id =bean.getId()+"";
-                    String collectionNum = bean.getCollectionNum()+"";
-                    String userImageId =bean.getUserImage();
-                    bundle.putString("id",id);
-                    bundle.putString("collectionNum",collectionNum);
-                    bundle.putString("userImageId",userImageId);
-                    bundle.putString("type",type);
-                    intent.putExtra("bundle",bundle);
-
+                    Intent intent = new Intent(context, FreshBooKSpecialActivity.class);
+                        String id =bean.getId()+"";
+                        String imageId = bean.getImage();
+                        String num =  bean.getTotalNum();
+                        String name2 = bean.getTitle();
+                        intent.putExtra("id",id);
+                        intent.putExtra("name",name2);
+                        intent.putExtra("num",num);
+                        intent.putExtra("imageId",imageId);
                     context.startActivity(intent);
 
                 }

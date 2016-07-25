@@ -47,7 +47,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -253,6 +253,11 @@
         <activity android:name=".activity.PutUserInfoActivity" />
         <activity android:name=".activity.UserCenterActivity" />
         <activity android:name=".activity.LogingPutPasswordActivity"></activity>
+        <activity android:name=".activity.FriendRingActivity"></activity>
+        <activity android:name=".activity.BannerPostJumpActivity"/>
+        <activity android:name=".activity.VideoJumpPlay"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.SearchActivity"/>
     </application>
 
 </manifest>
