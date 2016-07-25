@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.androidxx.yangjw.httplibrary.IOKCallBack;
@@ -28,6 +30,7 @@ public class ActivityJumpActivity extends AppCompatActivity{
     private ListView listView;
     private List<InternetActivityJumpInfo.DataBean.ListBean> mlist = new ArrayList();
     private InternetActivityJumpAdapter adpter;
+    private ImageView imageViewBack;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +48,13 @@ public class ActivityJumpActivity extends AppCompatActivity{
             public void onRefresh() {
                 mlist.clear();
                 initData(swipeRefresh);
+            }
+        });
+
+        imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
@@ -66,6 +76,8 @@ public class ActivityJumpActivity extends AppCompatActivity{
         listView = (ListView) findViewById(R.id.activity_list_view);
 
         listView.setDivider(null);
+
+        imageViewBack = (ImageView) findViewById(R.id.activity_back_jump);
 
 
     }

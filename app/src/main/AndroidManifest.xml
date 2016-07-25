@@ -232,6 +232,10 @@
         <!-- share sdk end -->
         <activity android:name=".activity.BannerPostJumpActivity" />
         <activity android:name=".activity.FriendRingActivity"></activity>
+        <activity android:name=".activity.BannerPostJumpActivity"/>
+        <activity android:name=".activity.VideoJumpPlay"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.SearchActivity"/>
     </application>
 
 </manifest>

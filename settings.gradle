@@ -1,2 +1,2 @@
-include ':app', ':httplibrary'
+include ':app', ':httplibrary', ':daoexamplegenerator'
 include ':library'

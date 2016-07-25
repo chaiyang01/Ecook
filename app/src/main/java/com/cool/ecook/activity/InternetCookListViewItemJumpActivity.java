@@ -73,6 +73,7 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageView imageViewPlay;
     private String type;
+    private String name;
     private CustomProgressDialog dialog;
 
     @Override
@@ -104,6 +105,18 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        imageViewPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InternetCookListViewItemJumpActivity.this,VideoJumpPlay.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("id",id);
+                    bundle.putString("name",name);
+                    intent.putExtra("bundle", bundle);
+                    startActivity(intent);
+            }
+        });
     }
 
 
@@ -119,8 +132,13 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
                     @Override
                     public void success(String result) {
                         Gson gson = new Gson();
+                        if(result==null){
+                            return;
+                        }
                         MainListViewInfo mainListViewInfo = gson.fromJson(result, MainListViewInfo.class);
-
+                        if (mainListViewInfo==null||mainListViewInfo.getList().isEmpty()){
+                            return;
+                        }
                         headList.addAll(mainListViewInfo.getList().get(0).getMaterialList());
 
                         mainList.addAll(mainListViewInfo.getList().get(0).getStepList());
@@ -136,6 +154,8 @@ public class InternetCookListViewItemJumpActivity extends AppCompatActivity {
                         Glide.with(InternetCookListViewItemJumpActivity.this).load(url).into(imageViewHeadMain);
 
                         textViewTitle.setText(mainListViewInfo.getList().get(0).getName());
+
+                        name = mainListViewInfo.getList().get(0).getName();
 
                         textViewUserName.setText(mainListViewInfo.getList().get(0).getAuthorname());
 

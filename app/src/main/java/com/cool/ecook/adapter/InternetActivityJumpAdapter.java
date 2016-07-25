@@ -1,12 +1,18 @@
 package com.cool.ecook.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
+import com.cool.ecook.activity.BannerJumpActivity;
+import com.cool.ecook.activity.BannerPostJumpActivity;
 import com.cool.ecook.bean.InternetActivityJumpInfo;
 import com.cool.ecook.bean.VideoButtonJumpInfo;
 
@@ -26,7 +32,7 @@ public class InternetActivityJumpAdapter extends CommonAdapter<InternetActivityJ
     }
 
     @Override
-    public void convert(ViewHolderM holderM, InternetActivityJumpInfo.DataBean.ListBean bean) {
+    public void convert(ViewHolderM holderM, final InternetActivityJumpInfo.DataBean.ListBean bean) {
         ImageView imageViewMain = holderM.getView(R.id.activity_main_pictrue);
 
         TextView textViewTitle = holderM.getView(R.id.activity_main_text_view);
@@ -34,7 +40,30 @@ public class InternetActivityJumpAdapter extends CommonAdapter<InternetActivityJ
 
         String url = "http://pic.ecook.cn/web/"+bean.getImage()+".jpg";
         Glide.with(context).load(url).into(imageViewMain);
-
+        imageViewMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url1 = bean.getUrl();
+                String name = bean.getTitle();
+                if (url1.indexOf("http") > -1) {
+                    Intent intent = new Intent(context, BannerJumpActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", url1);
+                    bundle.putString("name",name);
+                    intent.putExtra("bundle", bundle);
+                    context.startActivity(intent);
+                }else{
+                    String url2 = url1.substring(28,url1.length());
+                    Log.i("kkkkk","jjjjjj"+url1);
+                    Intent intent2 = new Intent(context, BannerPostJumpActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("url", url2);
+                    bundle.putString("name",name);
+                    intent2.putExtra("bundle", bundle);
+                    context.startActivity(intent2);
+                }
+            }
+        });
         int number =bean.getIsEnd();
 
         if (number == 2){

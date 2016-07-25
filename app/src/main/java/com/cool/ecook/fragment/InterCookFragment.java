@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import com.cool.ecook.R;
 import com.cool.ecook.activity.ActivityJumpActivity;
 import com.cool.ecook.activity.BannerJumpActivity;
 import com.cool.ecook.activity.BannerPostJumpActivity;
+import com.cool.ecook.activity.SearchActivity;
 import com.cool.ecook.activity.ShoppingJumpActivity;
 import com.cool.ecook.activity.SignJumpActivity;
 import com.cool.ecook.activity.VideoJumpActivity;
@@ -70,6 +72,7 @@ public class InterCookFragment extends Fragment {
     private TextView textViewActivity;
     private InternetCookMainListViewAdapter adapter;
     private int numberId;
+    private Button button;
 
     public InterCookFragment() {
         // Required empty public constructor
@@ -93,6 +96,8 @@ public class InterCookFragment extends Fragment {
          prflv = (PullToRefreshListView) view.findViewById(R.id.pull_to_fresh_list_view);
          prflv.setMode(PullToRefreshBase.Mode.BOTH);
          listView = prflv.getRefreshableView();
+
+        button = (Button) view.findViewById(R.id.main_search);
         inintHeaderView();
 
         initAdapter();
@@ -179,10 +184,12 @@ public class InterCookFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 String url = mlist.get(position).getUrl();
+                String name = "";
                 if (url.indexOf("http") > -1) {
                     Intent intent = new Intent(getActivity(), BannerJumpActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("url", url);
+                    bundle.putString("name",name);
                     intent.putExtra("bundle", bundle);
                     startActivity(intent);
                 }else{
@@ -191,9 +198,19 @@ public class InterCookFragment extends Fragment {
                     Intent intent2 = new Intent(getActivity(), BannerPostJumpActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("url", url1);
+                    bundle.putString("name",name);
                     intent2.putExtra("bundle", bundle);
                     startActivity(intent2);
                 }
+            }
+        });
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -229,7 +246,6 @@ public class InterCookFragment extends Fragment {
         textViewVideo = (TextView) header_view.findViewById(R.id.video_tv);
         textViewActivity = (TextView) header_view.findViewById(R.id.activity_tv);
         loadBannerDatas();
-        setupBanner();
         listView.addHeaderView(header_view);
     }
     /*
@@ -252,7 +268,7 @@ public class InterCookFragment extends Fragment {
                             return;
                         }
                         mlist.addAll(internetCookMainInfo.getData().getBannerList());
-
+                        setupBanner();
                         convenientBanner.getViewPager().getAdapter().notifyDataSetChanged();
 
                         nlist.addAll(internetCookMainInfo.getData().getButtonList());
