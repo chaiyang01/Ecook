@@ -97,10 +97,10 @@ public class LogingsActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void done(List<Proson> list, BmobException e) {
                         if (e ==null){
-                            Intent intent = new Intent(LogingsActivity.this,LogingPutPasswordActivity.class);
-                            intent.putExtra("phone_num",phone_num);
-                            startActivity(intent);
-                        }else {
+//                            Intent intent = new Intent(LogingsActivity.this,LogingPutPasswordActivity.class);
+//                            intent.putExtra("phone_num",phone_num);
+//                            startActivity(intent);
+//                        }else {
                             if (!TextUtils.isEmpty(phone_num)) {
                                 BmobSMS.requestSMSCode(phone_num, "本次验证码为：", new QueryListener<Integer>() {
                                     @Override
