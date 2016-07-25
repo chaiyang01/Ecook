@@ -7,8 +7,10 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
         android:text="取消"
+        android:gravity="center_vertical"
         android:textColor="#FFD700"
         android:id="@+id/textView" />
     <View
@@ -19,27 +21,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
     </View>
-    <TextView
-        android:id="@+id/tv_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="登录后可以同步菜谱、交朋友、赚厨币当钱花"
-        android:layout_below="@+id/button"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:singleLine="true"
         android:text="一键登录"
-        android:textColor="@color/logo_text_color"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
     <ImageView
@@ -54,60 +45,56 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="41dp"
-        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
         android:textColor="#000000"
         android:text="手机号"
-        android:textSize="15sp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editText"
-        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/tv"
-        android:layout_toEndOf="@+id/tv"
         android:layout_toRightOf="@+id/tv"
         android:background="@null"
-        android:textSize="15sp"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
         android:hint="请输入手机号" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_above="@+id/linearLayout"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/editText"
         android:background="#FFD700"
         android:text="登录"
         android:textColor="#ffffff"
         android:id="@+id/button" />
 
     <TextView
-        android:id="@+id/tvMsgRegister"
-        android:layout_width="fill_parent"
+        android:id="@+id/tv_show"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:singleLine="true"
-        android:textSize="18dp" />
+        android:text="登录后可以同步菜谱、交朋友、赚厨币当钱花"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/button"
+        android:textSize="17sp"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="80dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/tv_show"
+        >
 
         <TextView
             android:id="@+id/tvWeixin"
@@ -147,16 +134,4 @@
             android:text="QQ登录"
             android:textSize="18dp" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/tvOther"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvMsgRegister"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:singleLine="true"
-        android:textColor="@color/login_with_other_plat_text_color"
-        android:textSize="18dp" />
 </RelativeLayout>

@@ -19,12 +19,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cool.ecook.R;
 import com.cool.ecook.adapter.BookUserInfoCommetRecyAdapter;
 import com.cool.ecook.adapter.BookUserInfoRecyAdapter;
 import com.cool.ecook.bean.CookBookDetailsInfo;
+import com.cool.ecook.bean.Proson;
 import com.cool.ecook.config.URLConfig;
 import com.cool.ecook.utlis.ShowShareUtils;
 import com.cool.ecook.view.CustomProgressDialog;
@@ -38,6 +40,8 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Call;
 

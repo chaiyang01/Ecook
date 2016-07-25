@@ -13,9 +13,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.cool.ecook.R;
+import com.cool.ecook.activity.LogingsActivity;
 import com.cool.ecook.thirdlogin.androidclassdemo.LoginActivity;
 
 /**
+ * 一键登录界面
  * A simple {@link Fragment} subclass.
  */
 public class MyFragment extends Fragment implements View.OnClickListener{
@@ -59,7 +61,7 @@ public class MyFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        Intent intent = new Intent(getActivity(), LogingsActivity.class);
         startActivity(intent);
    }
 }

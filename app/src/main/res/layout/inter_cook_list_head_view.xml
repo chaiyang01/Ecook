@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:clipChildren="false"
     android:layout_height="wrap_content">
 <com.bigkoo.convenientbanner.ConvenientBanner
     android:id="@+id/internet_cook_ad"
     android:layout_width="match_parent"
+    android:clipChildren="false"
     android:layout_height="150dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:gravity="center"
     >
 </com.bigkoo.convenientbanner.ConvenientBanner>
     
@@ -35,14 +36,12 @@
             android:id="@+id/sign"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher"
             android:layout_margin="5dp"
             android:scaleType="fitXY"/>
         <TextView
             android:id="@+id/sign_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="title"
             android:layout_margin="5dp"
             android:textSize="11sp"
             android:gravity="center"/>
@@ -59,14 +58,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:src="@mipmap/ic_launcher"
                 android:scaleType="fitXY"/>
             <TextView
                 android:id="@+id/shopping_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="title"
                 android:textSize="11sp"
                 android:gravity="center"/>
         </LinearLayout>
@@ -82,13 +79,11 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:src="@mipmap/ic_launcher"
                 android:scaleType="fitXY"/>
             <TextView
                 android:id="@+id/video_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="title"
                 android:textSize="11sp"
                 android:layout_margin="5dp"
                 android:gravity="center"/>
@@ -105,7 +100,6 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:src="@mipmap/ic_launcher"
                 android:scaleType="fitXY"/>
             <TextView
                 android:id="@+id/activity_tv"
@@ -113,7 +107,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:textSize="11sp"
-                android:text="title"
                 android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>

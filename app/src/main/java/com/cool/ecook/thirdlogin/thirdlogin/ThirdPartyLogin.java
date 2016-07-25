@@ -69,11 +69,11 @@ public class ThirdPartyLogin extends FakeActivity implements OnClickListener, Ca
 		// 初始化ui
 		handler = new Handler(this);
 		activity.setContentView(R.layout.tpl_login_page);
-		(activity.findViewById(R.id.tvMsgRegister)).setOnClickListener(this);
+		//(activity.findViewById(R.id.tvMsgRegister)).setOnClickListener(this);
 		(activity.findViewById(R.id.tvWeixin)).setOnClickListener(this);
 		(activity.findViewById(R.id.tvWeibo)).setOnClickListener(this);
 		(activity.findViewById(R.id.tvQq)).setOnClickListener(this);
-		(activity.findViewById(R.id.tvOther)).setOnClickListener(this);
+		//(activity.findViewById(R.id.tvOther)).setOnClickListener(this);
 		(activity.findViewById(R.id.textView)).setOnClickListener(this);
 	}
 	
@@ -84,11 +84,11 @@ public class ThirdPartyLogin extends FakeActivity implements OnClickListener, Ca
 	
 	public void onClick(View v) {
 		switch(v.getId()) {
-			case R.id.tvMsgRegister: {
-				//短信登录
-				popupMsgLogin();
-				//Toast.makeText(this, "未完成短信登录", Toast.LENGTH_SHORT).show();
-			} break;
+//			case R.id.tvMsgRegister: {
+//				//短信登录
+//				popupMsgLogin();
+//				//Toast.makeText(this, "未完成短信登录", Toast.LENGTH_SHORT).show();
+//			} break;
 			case R.id.tvWeixin: {
 				//微信登录
 				//测试时，需要打包签名；sample测试时，用项目里面的demokey.keystore
@@ -106,10 +106,10 @@ public class ThirdPartyLogin extends FakeActivity implements OnClickListener, Ca
 				Platform qzone = ShareSDK.getPlatform(QZone.NAME);
 				authorize(qzone);
 			} break;
-			case R.id.tvOther: {
-				//其他登录
-				authorize(null);
-			} break;
+//			case R.id.tvOther: {
+//				//其他登录
+//				authorize(null);
+//			} break;
 			case R.id.tvFacebook: {
 				//facebook登录
 				Dialog dlg = (Dialog) v.getTag();

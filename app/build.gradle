@@ -8,6 +8,9 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
+//   // **兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**
+//    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.cool.ecook"
         minSdkVersion 15
@@ -22,9 +25,11 @@ android {
         }
     }
     sourceSets {
+        main.jniLibs.srcDirs = ['libs']
         main {
             jniLibs.srcDir("libs")//so资源文件所在的目录
             //assets.srcDir("assets")
+
         }
     }
     productFlavors {
@@ -44,7 +49,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.zhy:okhttputils:2.6.2'
@@ -61,6 +66,7 @@ dependencies {
     compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.8'
     compile files('libs/MobCommons-2016.0623.1641.jar')
     compile files('libs/umeng-analytics-v6.0.1.jar')
-    compile name:'SMSSDK-2.1.0',ext:'aar'
-    compile name:'SMSSDKGUI-2.1.0',ext:'aar'
+    compile name: 'SMSSDK-2.1.0', ext: 'aar'
+    compile name: 'SMSSDKGUI-2.1.0', ext: 'aar'
+
 }

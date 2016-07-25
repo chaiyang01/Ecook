@@ -7,13 +7,20 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.cool.ecook.bean.Proson;
 import com.cool.ecook.fragment.AddFragment;
 import com.cool.ecook.fragment.CookBookFragment;
 import com.cool.ecook.fragment.CookSpeakFragment;
 import com.cool.ecook.fragment.InterCookFragment;
 import com.cool.ecook.fragment.MyFragment;
 import com.cool.ecook.thirdlogin.androidclassdemo.LoginActivity;
+
+import cn.bmob.v3.Bmob;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener{
     //UI
@@ -32,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Bmob后台管理
+       // Bmob.initialize(this,"8b1e9bdd9235b636ce29b7551d8f5791");
+        Bmob.initialize(this,"218f5c0881a2b40e89e25e29cf870610");
+
         //......
         //初始化视图
         initView();

@@ -5,13 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.androidxx.yangjw.httplibrary.IOKCallBack;
@@ -218,6 +221,13 @@ public class InterCookFragment extends Fragment {
         header_view =LayoutInflater.from(getActivity()).inflate(R.layout.inter_cook_list_head_view, null);
 
         convenientBanner = (ConvenientBanner) header_view.findViewById(R.id.internet_cook_ad);
+        RelativeLayout.LayoutParams params  = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+        params.setMargins(100,0,100,0);
+        convenientBanner.getViewPager().setLayoutParams(params);
+        convenientBanner.getViewPager().setPageMargin(20);
+        convenientBanner.getViewPager().setOffscreenPageLimit(3);
+
+
 
         imageViewSign = (ImageView) header_view.findViewById(R.id.sign);
         imageViewShopping = (ImageView) header_view.findViewById(R.id.shopping);
